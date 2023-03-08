@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import Card from "./components/Card";
 import { Navbar } from "./components/Navbar";
+import { NavbarMobile } from "./components/NavbarMobile";
 
 export const metadata = {
   title: "Devfolio | Avik Kundu",
@@ -94,58 +95,7 @@ export default function RootLayout({
             </div>
           </div>
 
-          <nav id="navbar" className="hidden lg:hidden">
-            <ul className="block rounded-b-[20px] shadow-md absolute left-0 top-20 z-[22222222222222] w-full bg-white dark:bg-[#1d1d1d]">
-              <li>
-                <a className="mobile-menu-items" href="/">
-                  <span className="mr-2 text-xl">
-                    <i className="fa-regular fa-user"></i>
-                  </span>
-                  About
-                </a>
-              </li>
-              <li>
-                <a className="mobile-menu-items" href="/resume">
-                  <span className="mr-2 text-xl">
-                    <i className="fa-regular fa-file-lines"></i>
-                  </span>
-                  Resume
-                </a>
-              </li>
-              <li>
-                <a className="mobile-menu-items" href="/projects">
-                  <span className="mr-2 text-xl">
-                    <i className="fas fa-briefcase"></i>
-                  </span>
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a className="mobile-menu-items-active" href="/blog">
-                  <span className="mr-2 text-xl">
-                    <i className="fa-brands fa-blogger"></i>
-                  </span>
-                  Blogs
-                </a>
-              </li>
-              <li>
-                <a className="mobile-menu-items-active" href="/research">
-                  <span className="mr-2 text-xl">
-                    <i className="fa-solid fa-book"></i>
-                  </span>
-                  Research
-                </a>
-              </li>
-              <li>
-                <a className="mobile-menu-items" href="/contact">
-                  <span className="mr-2 text-xl">
-                    <i className="fa-solid fa-address-book"></i>
-                  </span>
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <NavbarMobile />
 
           <div className="container grid grid-cols-12 md:gap-10 justify-between lg:mt-[220px]">
             <Card />

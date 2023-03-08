@@ -1661,6 +1661,10 @@ video {
   height: 0.25rem;
 }
 
+.h-\[44rem\] {
+  height: 44rem;
+}
+
 .max-h-\[60vh\] {
   max-height: 60vh;
 }
@@ -2160,7 +2164,7 @@ video {
 }
 
 .bg-homeBg {
-  background-image: url("../images/background/bg.jpg");
+  background-image: url("../images/background/sample-10.jpg");
 }
 
 .bg-gradient-to-r {
@@ -3037,7 +3041,7 @@ video {
 }
 
 .dark .dark\:bg-homeTwoBg-dark {
-  background-image: url("../images/background/bgtwo.jpg");
+  background-image: url("../images/background/sample-4.jpg");
 }
 
 .dark .dark\:bg-homeBg-dark {

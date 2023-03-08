@@ -1,7 +1,10 @@
 "use client";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Transition } from "@headlessui/react";
+import { Fragment, useState } from "react";
 import { string, object } from "yup";
+import { Notification } from "./Notification";
 
 interface IContactProps {
   name: string;
@@ -26,33 +29,35 @@ const validate: any = object({
     .min(20, "Message must be at least 20 characters"),
 });
 
-const formSubmit = (
-  values: IContactProps,
-  { setSubmitting, resetForm }: any
-) => {
-  setSubmitting(true);
-  console.log(values);
-  fetch("https://formsubmit.co/ajax/2b90c706f0ae682a5f6a19a9caf16cc1", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(values),
-  })
-    .then((res) => {
-      alert(JSON.stringify("Your message has been sent successfully"));
-      console.log(res);
-      setSubmitting(false);
-      resetForm();
-    })
-    .catch((err) => {
-      alert(JSON.stringify("Something went wrong. Please Try Again."));
-      console.log(err);
-      setSubmitting(false);
-    });
-};
-
 export const Contact = () => {
+  const [message, setMessage] = useState("");
+
+  const formSubmit = (
+    values: IContactProps,
+    { setSubmitting, resetForm }: any
+  ) => {
+    setSubmitting(true);
+    console.log(values);
+    fetch("https://formsubmit.co/ajax/2b90c706f0ae682a5f6a19a9caf16cc1", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    })
+      .then((res) => {
+        setMessage("success");
+        console.log(res);
+        setSubmitting(false);
+        resetForm();
+      })
+      .catch((err) => {
+        setMessage("error");
+        console.log(err);
+        setSubmitting(false);
+      });
+  };
+
   return (
     <>
       <div>
@@ -79,15 +84,7 @@ export const Contact = () => {
                     validationSchema={validate}
                     onSubmit={formSubmit}
                   >
-                    {({
-                      values,
-                      errors,
-                      handleSubmit,
-                      handleChange,
-                      isSubmitting,
-                      isValidating,
-                      touched,
-                    }) => (
+                    {({ handleSubmit, isSubmitting, isValidating }) => (
                       <Form
                         onSubmit={handleSubmit}
                         className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
@@ -205,6 +202,8 @@ export const Contact = () => {
           </div>
         </div>
       </div>
+
+      {message && <Notification message={message} />}
     </>
   );
 };
