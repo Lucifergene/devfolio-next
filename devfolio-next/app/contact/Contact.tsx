@@ -1,17 +1,10 @@
 "use client";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import { string, object } from "yup";
 import { Notification } from "./Notification";
-
-interface IContactProps {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
+import { IContactProps } from "../../typings";
 
 const initialValues: IContactProps = {
   name: "",

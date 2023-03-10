@@ -1,39 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const query = `
-    query GetUserArticles($page: Int!) {
-        user(username: "avik6028") {
-            publication {
-                posts(page: $page) {
-                    dateAdded
-                    title
-                    brief
-                    slug
-                }
-            }
-        }
-    }
-`;
-
-const variables = { page: 0 };
-
-const fetchBlogs = async () => {
-  const data = await fetch("https://api.hashnode.com/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      query,
-      variables,
-    }),
-  });
-
-  const result = await data.json();
-  const articles = result.data.user.publication.posts;
-  return articles;
-};
+import { fetchBlogs } from "./utils";
 
 async function Blogs() {
   const posts = await fetchBlogs();
@@ -49,7 +17,7 @@ async function Blogs() {
             </div>
           </div>
 
-          <div className="pb-16 px-8 sm:px-6 lg:px-16 lg:pb-24">
+          <div className="pb-16 px-8 sm:px-6 lg:px-16 lg:pb-12">
             <div className="relative mx-auto ">
               <div>
                 <p className="text-lg text-gray-500">
@@ -58,6 +26,7 @@ async function Blogs() {
                   <Link
                     href="https://blog.avikkundu.in/"
                     className="text-indigo-800"
+                    target={"_blank"}
                   >
                     here
                   </Link>
@@ -67,7 +36,9 @@ async function Blogs() {
                 {posts.map((post: any) => {
                   const dateObj = new Date(post.dateAdded);
                   const date = dateObj.getDate();
-                  const month = dateObj.toLocaleString("default", { month: "long" });
+                  const month = dateObj.toLocaleString("default", {
+                    month: "long",
+                  });
                   const dateAdded = date + " " + month;
                   return (
                     <div key={post.title} className="mb-6">
@@ -77,6 +48,7 @@ async function Blogs() {
                       <Link
                         href={"https://www.hashnode.com/post/" + post.slug}
                         className="mt-2 block"
+                        target={"_blank"}
                       >
                         <p className="text-xl font-semibold text-gray-900">
                           {post.title}

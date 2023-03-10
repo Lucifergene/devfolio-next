@@ -38,12 +38,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Roboto+Slab:wght@300;400;500;600;700&amp;display=swap"
           rel="stylesheet"
         />
-        {/* <!-- slick --> */}
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="/assets/css/vendor/slick.css"
-        />
+
         {/* <!--=== main css ===--> */}
         <link rel="stylesheet" href="/assets/css/tailwind.css" />
         <link rel="stylesheet" href="/assets/css/custom.css" />
@@ -53,13 +48,14 @@ export default function RootLayout({
           <div className="section-bg">
             <div className="w-full flex justify-between px-4">
               {/* <!-- website Logo --> */}
-              <a href="/">
-                <img
-                  className="h-[26px] lg:h-[32px]"
-                  src="/assets/images/logo/logo.png"
-                  alt="logo"
-                />
-              </a>
+              <div className="flex items-center">
+              <img
+                className="h-[4rem] lg:h-[6rem]"
+                src="/assets/images/logo/logo-2.png"
+                alt="logo"
+              />
+              </div>
+
               <div className="flex items-center">
                 {/* <!-- dark and light mode toggle --> */}
                 <button
