@@ -105,7 +105,9 @@ export default function RootLayout({
         </div>
 
         <script src="/assets/js/vendor/jquary.min.js"></script>
-        <script src="/assets/js/vendor/slick.js"></script>
+        {/* <script src="/assets/js/vendor/slick.js"></script> */}
+        {/* <script src="/assets/js/vendor/isotope.pkgd.min.js"></script> */}
+        {/* <script src="/assets/js/vendor/jquery.modal.min.js"></script> */}
         {/* <!-- main js --> */}
         <script src="/assets/js/main.js"></script>
       </body>

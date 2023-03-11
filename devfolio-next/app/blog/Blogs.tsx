@@ -17,7 +17,7 @@ async function Blogs() {
             </div>
           </div>
 
-          <div className="pb-16 px-8 sm:px-6 lg:px-16 lg:pb-12">
+          <div className="pb-16 px-8 overflow-hidden sm:px-6 lg:px-16 lg:pb-12">
             <div className="relative mx-auto ">
               <div>
                 <p className="text-lg text-gray-500">
