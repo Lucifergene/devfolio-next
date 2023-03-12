@@ -49,11 +49,11 @@ export default function RootLayout({
             <div className="w-full flex justify-between px-4">
               {/* <!-- website Logo --> */}
               <div className="flex items-center">
-              <img
-                className="h-[4rem] lg:h-[6rem]"
-                src="/assets/images/logo/logo-2.png"
-                alt="logo"
-              />
+                <img
+                  className="h-[4rem] lg:h-[6rem]"
+                  src="/assets/images/logo/logo-2.png"
+                  alt="logo"
+                />
               </div>
 
               <div className="flex items-center">

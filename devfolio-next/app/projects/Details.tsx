@@ -45,7 +45,7 @@ export const Details = (props: any) => {
               <div className="relative inline-block align-bottom bg-white rounded-lg px-8 py-12 text-left shadow-xl transform transition-all sm:my-48 sm:align-middle sm:max-w-4xl sm:w-full lg:px-12 dark:bg-black">
                 <div>
                   <div className="overflow-y-scroll max-h-[60vh] lg:max-h-[80vh] dark:scrollbarDark scrollbarLight">
-                    <h2 className="text-[#ef4060] dark:hover:text-[#FA5252] text-4xl text-center font-bold">
+                    <h2 className="text-[#ef4060] dark:hover:text-[#FA5252] text-5xl text-center font-bold font-robotoSlab">
                       {project.title}
                     </h2>
                     <div className="grid grid-cols-1 lg:grid-cols-2 my-6 px-4 lg:px-12">
