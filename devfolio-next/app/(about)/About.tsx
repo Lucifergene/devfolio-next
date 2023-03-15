@@ -1,7 +1,14 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 const About = () => {
+  useEffect(() => {
+    const card = document.getElementById("card") as HTMLDivElement;
+    card.classList.remove("hidden");
+  }, []);
+
   return (
     <>
       <div className="bg-white lg:rounded-2xl dark:bg-[#111111]">

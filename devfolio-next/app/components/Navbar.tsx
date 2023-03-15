@@ -8,7 +8,7 @@ export const Navbar = () => {
   const pathname = usePathname();
   return (
     <>
-      <header className="lg:w-[660px] h-[144px] hidden lg:block p-[30px] ml-auto mb-10 rounded-[16px] bg-white dark:bg-[#111111]">
+      <header className="lg:w-[560px] h-[144px] hidden lg:block p-[30px] ml-auto mb-10 rounded-[16px] bg-white dark:bg-[#111111]">
         <nav className="hidden lg:block">
           <ul className="flex">
             <li>
@@ -33,7 +33,7 @@ export const Navbar = () => {
                 Resume
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 className={
                   pathname === "/projects" ? "menu-active" : "menu-item"
@@ -45,7 +45,7 @@ export const Navbar = () => {
                 </span>
                 Projects
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 className={pathname === "/blog" ? "menu-active" : "menu-item"}
@@ -65,7 +65,7 @@ export const Navbar = () => {
                 href="/research"
               >
                 <span className="text-xl mb-1">
-                <i className="fa-solid fa-book"></i>
+                  <i className="fa-solid fa-book"></i>
                 </span>
                 Research
               </Link>

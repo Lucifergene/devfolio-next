@@ -1,6 +1,12 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 
 export const Resume = () => {
+  useEffect(() => {
+    const card = document.getElementById("card") as HTMLDivElement;
+    card.classList.add("hidden");
+  }, []);
+
   return (
     <>
       <div>
@@ -86,7 +92,7 @@ export const Resume = () => {
               {/* <!-- education --> */}
             </div>
             {/* <!-- working section start --> */}
-            <div className="container bg-color-810 dark:bg-[#0D0D0D] py-8 px-12 lg:px-16">
+            <div className="container py-8 px-12 lg:px-16">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="col-span-1">
                   <h4 className="text-5xl dark:text-white font-medium mb-6">
@@ -155,7 +161,7 @@ export const Resume = () => {
                     </div>
                     <div className="w-full bg-[#edf2f2] rounded-full h-1 dark:bg-[#1c1c1c]">
                       <div
-                        className="bg-[#ca56f2] h-1 rounded-full"
+                        className="bg-teal-500 h-1 rounded-full"
                         style={{ width: "90%" }}
                       ></div>
                     </div>
@@ -168,16 +174,36 @@ export const Resume = () => {
                     Technology Stack{" "}
                   </h4>
                   <div className="flex gap-y-5 gap-x-2.5 flex-wrap">
-                    <button className="resume-btn">ReactJS</button>
-                    <button className="resume-btn">TypeScript</button>
-                    <button className="resume-btn">Golang</button>
-                    <button className="resume-btn">NodeJS</button>
-                    <button className="resume-btn">Kubernetes</button>
-                    <button className="resume-btn">CI/CD</button>
-                    <button className="resume-btn">O11y</button>
-                    <button className="resume-btn">AWS</button>
-                    <button className="resume-btn">Azure</button>
-                    <button className="resume-btn">Openshift</button>
+                    <button className="resume-btn bg-[#FF6464] text-white ">
+                      ReactJS
+                    </button>
+                    <button className="resume-btn bg-[#FF6464] text-white ">
+                      TypeScript
+                    </button>
+                    <button className="resume-btn bg-[#9272d4]  text-white ">
+                      Golang
+                    </button>
+                    <button className="resume-btn bg-[#9272d4]  text-white ">
+                      NodeJS
+                    </button>
+                    <button className="resume-btn bg-[#5185d4]  text-white ">
+                      Kubernetes
+                    </button>
+                    <button className="resume-btn bg-[#5185d4]  text-white ">
+                      CI/CD
+                    </button>
+                    <button className="resume-btn bg-[#5185d4]  text-white ">
+                      O11y
+                    </button>
+                    <button className="resume-btn bg-teal-500  text-white ">
+                      AWS
+                    </button>
+                    <button className="resume-btn bg-teal-500 text-white ">
+                      Azure
+                    </button>
+                    <button className="resume-btn bg-teal-500 text-white ">
+                      Openshift
+                    </button>
                   </div>
                 </div>
               </div>

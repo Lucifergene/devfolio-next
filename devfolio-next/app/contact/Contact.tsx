@@ -1,7 +1,7 @@
 "use client";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { string, object } from "yup";
 import { Notification } from "./Notification";
 import { IContactProps } from "../../typings";
@@ -24,6 +24,11 @@ const validate: any = object({
 
 export const Contact = () => {
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const card = document.getElementById("card") as HTMLDivElement;
+    card.classList.add("hidden");
+  }, []);
 
   const formSubmit = (
     values: IContactProps,

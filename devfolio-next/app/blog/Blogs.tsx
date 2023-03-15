@@ -50,7 +50,7 @@ async function Blogs() {
                         className="mt-2 block"
                         target={"_blank"}
                       >
-                        <p className="text-xl font-semibold text-gray-900">
+                        <p className="dark:text-white text-xl font-semibold text-gray-900 ">
                           {post.title}
                         </p>
                         <p className="mt-3 text-base text-gray-500">

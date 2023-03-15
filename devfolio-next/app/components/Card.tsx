@@ -3,7 +3,10 @@ import React from "react";
 const Card = () => {
   return (
     <>
-      <div className="col-span-12 md:col-span-4 lg:block lg:sticky h-screen top-44">
+      <div
+        id="card"
+        className="col-span-12 md:col-span-4 lg:block lg:sticky h-screen top-44 hidden"
+      >
         <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
           {/* <!-- profile image --> */}
           {/* <img
@@ -117,7 +120,7 @@ const Card = () => {
             {/* <!-- personal info end --> */}
 
             {/* <!-- dowanload button --> */}
-            <a href="https://drive.google.com/file/d/11Ws3nFlWCiZYKAgwBoQIxKtQauh4jziJ/view?usp=sharing">
+            {/* <a href="https://drive.google.com/file/d/11Ws3nFlWCiZYKAgwBoQIxKtQauh4jziJ/view?usp=sharing">
               <button className="dowanload-btn">
                 <img
                   className="mr-3"
@@ -126,7 +129,7 @@ const Card = () => {
                 />
                 Download Resume
               </button>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

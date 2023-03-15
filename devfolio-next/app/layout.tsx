@@ -1,7 +1,9 @@
 import "../styles/globals.css";
 import Card from "./components/Card";
+import { DarkModeToggle } from "./components/DarkModeToggle";
 import { Navbar } from "./components/Navbar";
 import { NavbarMobile } from "./components/NavbarMobile";
+import { NavMobileToggle } from "./components/NavMobileToggle";
 
 export const metadata = {
   title: "Devfolio | Avik Kundu",
@@ -58,35 +60,9 @@ export default function RootLayout({
 
               <div className="flex items-center">
                 {/* <!-- dark and light mode toggle --> */}
-                <button
-                  id="theme-toggle"
-                  type="button"
-                  className="dark-light-btn"
-                >
-                  <i
-                    id="theme-toggle-dark-icon"
-                    className="fa-solid text-xl fa-moon hidden"
-                  ></i>
-                  <i
-                    id="theme-toggle-light-icon"
-                    className="fa-solid fa-sun text-xl hidden"
-                  ></i>
-                </button>
+                <DarkModeToggle />
                 {/* <!-- mobile toggle button --> */}
-                <button
-                  id="menu-toggle"
-                  type="button"
-                  className="menu-toggle-btn"
-                >
-                  <i
-                    id="menu-toggle-open-icon"
-                    className="fa-solid fa-bars text-xl"
-                  ></i>
-                  <i
-                    id="menu-toggle-close-icon"
-                    className="fa-solid fa-xmark text-xl hidden"
-                  ></i>
-                </button>
+                <NavMobileToggle />
               </div>
             </div>
           </div>
@@ -96,7 +72,7 @@ export default function RootLayout({
           <div className="container grid grid-cols-12 md:gap-10 justify-between lg:mt-[220px]">
             <Card />
 
-            <div className="col-span-12 lg:col-span-8 lg:top-46 relative top-64 ">
+            <div className="col-span-12 lg:col-span-8 lg:top-46 relative">
               <Navbar />
 
               {children}
@@ -104,12 +80,12 @@ export default function RootLayout({
           </div>
         </div>
 
-        <script src="/assets/js/vendor/jquary.min.js"></script>
+        {/* <script src="/assets/js/vendor/jquary.min.js"></script> */}
         {/* <script src="/assets/js/vendor/slick.js"></script> */}
         {/* <script src="/assets/js/vendor/isotope.pkgd.min.js"></script> */}
         {/* <script src="/assets/js/vendor/jquery.modal.min.js"></script> */}
         {/* <!-- main js --> */}
-        <script src="/assets/js/main.js"></script>
+        {/* <script src="/assets/js/main.js"></script> */}
       </body>
     </html>
   );

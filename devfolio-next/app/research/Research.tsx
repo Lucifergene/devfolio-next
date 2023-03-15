@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import classNames from "classnames";
 import Link from "next/link";
 
@@ -6,6 +7,11 @@ import { AuthorProps, PostItemProps } from "../../typings";
 import { posts } from "./data";
 
 export const Research = () => {
+  useEffect(() => {
+    const card = document.getElementById("card") as HTMLDivElement;
+    card.classList.add("hidden");
+  }, []);
+
   return (
     <>
       <div>
