@@ -1,7 +1,13 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
+import { showCard } from "../utils";
 
 const About = () => {
+  useEffect(() => {
+    showCard();
+  }, []);
+
   return (
     <>
       <section id="about" className="bg-white lg:rounded-2xl dark:bg-[#111111]">

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { string, object } from "yup";
 import { Notification } from "./Notification";
 import { IContactProps } from "../../typings";
+import { hideCard } from "../utils";
 
 const initialValues: IContactProps = {
   name: "",
@@ -24,15 +25,9 @@ const validate: any = object({
 
 export const Contact = () => {
   const [message, setMessage] = useState("");
-  const isLoaded = document.getElementById("loading");
 
   useEffect(() => {
-    if (isLoaded) {
-      const sectionElement = document.getElementById(
-        "contact"
-      ) as HTMLDivElement;
-      sectionElement.scrollIntoView({ behavior: "smooth" });
-    }
+    hideCard("contact");
   }, []);
 
   const formSubmit = (

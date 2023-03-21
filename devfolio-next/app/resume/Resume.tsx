@@ -1,15 +1,10 @@
 "use client";
 import React, { useEffect } from "react";
+import { hideCard } from "../utils";
 
 export const Resume = () => {
-  const isLoaded = document.getElementById("loading");
   useEffect(() => {
-    if (isLoaded) {
-      const sectionElement = document.getElementById(
-        "resume"
-      ) as HTMLDivElement;
-      sectionElement.scrollIntoView({ behavior: "smooth" });
-    }
+    hideCard("resume");
   }, []);
 
   return (

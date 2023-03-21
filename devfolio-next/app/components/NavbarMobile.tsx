@@ -3,15 +3,13 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
+import { hideCard } from "../utils";
 
 export const NavbarMobile = () => {
   const pathname = usePathname();
 
   const handleClose = (section: string) => {
-    const sectionElement = document.getElementById(section);
-    if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: "smooth" });
-    }
+    hideCard(section);
 
     const menuToggleCloseIcon = document.getElementById(
       "menu-toggle-close-icon"

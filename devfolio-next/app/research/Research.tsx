@@ -6,16 +6,11 @@ import Link from "next/link";
 
 import { AuthorProps, PostItemProps } from "../../typings";
 import { posts } from "./data";
+import { hideCard } from "../utils";
 
 export const Research = () => {
-  const isLoaded = document.getElementById("loading");
   useEffect(() => {
-    if (isLoaded) {
-      const sectionElement = document.getElementById(
-        "research"
-      ) as HTMLDivElement;
-      sectionElement.scrollIntoView({ behavior: "smooth" });
-    }
+    hideCard("research");
   }, []);
   return (
     <>
