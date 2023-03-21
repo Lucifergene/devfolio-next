@@ -7,7 +7,12 @@ import classNames from "classnames";
 export const NavbarMobile = () => {
   const pathname = usePathname();
 
-  const handleClose = () => {
+  const handleClose = (section: string) => {
+    const sectionElement = document.getElementById(section);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
+
     const menuToggleCloseIcon = document.getElementById(
       "menu-toggle-close-icon"
     ) as HTMLButtonElement;
@@ -34,7 +39,9 @@ export const NavbarMobile = () => {
                   : "mobile-menu-items"
               )}
               href="/"
-              onClick={handleClose}
+              onClick={() => {
+                handleClose("");
+              }}
             >
               <span className="mr-2 text-xl">
                 <i className="fa-regular fa-user"></i>
@@ -50,7 +57,9 @@ export const NavbarMobile = () => {
                   : "mobile-menu-items"
               )}
               href="/resume"
-              onClick={handleClose}
+              onClick={() => {
+                handleClose("resume");
+              }}
             >
               <span className="mr-2 text-xl">
                 <i className="fa-regular fa-file-lines"></i>
@@ -81,7 +90,9 @@ export const NavbarMobile = () => {
                   : "mobile-menu-items"
               )}
               href="/blog"
-              onClick={handleClose}
+              onClick={() => {
+                handleClose("blogs");
+              }}
             >
               <span className="mr-2 text-xl">
                 <i className="fa-brands fa-blogger"></i>
@@ -97,7 +108,9 @@ export const NavbarMobile = () => {
                   : "mobile-menu-items"
               )}
               href="/research"
-              onClick={handleClose}
+              onClick={() => {
+                handleClose("research");
+              }}
             >
               <span className="mr-2 text-xl">
                 <i className="fa-solid fa-book"></i>
@@ -113,7 +126,9 @@ export const NavbarMobile = () => {
                   : "mobile-menu-items"
               )}
               href="/contact"
-              onClick={handleClose}
+              onClick={() => {
+                handleClose("contact");
+              }}
             >
               <span className="mr-2 text-xl">
                 <i className="fa-solid fa-address-book"></i>

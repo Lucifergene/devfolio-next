@@ -24,10 +24,15 @@ const validate: any = object({
 
 export const Contact = () => {
   const [message, setMessage] = useState("");
+  const isLoaded = document.getElementById("loading");
 
   useEffect(() => {
-    const card = document.getElementById("card") as HTMLDivElement;
-    card.classList.add("hidden");
+    if (isLoaded) {
+      const sectionElement = document.getElementById(
+        "contact"
+      ) as HTMLDivElement;
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
   }, []);
 
   const formSubmit = (
@@ -58,7 +63,7 @@ export const Contact = () => {
 
   return (
     <>
-      <div>
+      <section id="contact">
         <div className="bg-white lg:rounded-2xl dark:bg-[#111111]">
           <div className="container sm:px-5 md:px-10 lg:px-14">
             <div className="pt-12 px-4 md:px-0">
@@ -71,7 +76,7 @@ export const Contact = () => {
             <div className=" pb-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:pb-24">
               <div className="relative max-w-xl mx-auto">
                 <div className="text-center">
-                  <p className="mt-4 text-lg leading-6 text-gray-500">
+                  <p className="mt-4 text-lg leading-6 text-gray-500 dark:text-[#A6A6A6]">
                     Want to discuss about a project or just want to say hi?{" "}
                     <br /> Feel free to contact me.
                   </p>
@@ -90,7 +95,7 @@ export const Contact = () => {
                         <div>
                           <label
                             htmlFor="name"
-                            className="block text-sm font-medium text-gray-700"
+                            className="dark:text-[#A6A6A6] block text-sm font-medium text-gray-700"
                           >
                             Your Name
                           </label>
@@ -101,7 +106,7 @@ export const Contact = () => {
                               name="name"
                               id="name"
                               autoComplete="name"
-                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
                             />
                             <ErrorMessage
                               name="name"
@@ -113,7 +118,7 @@ export const Contact = () => {
                         <div>
                           <label
                             htmlFor="email"
-                            className="block text-sm font-medium text-gray-700"
+                            className="dark:text-[#A6A6A6] block text-sm font-medium text-gray-700"
                           >
                             Email
                           </label>
@@ -124,7 +129,7 @@ export const Contact = () => {
                               name="email"
                               id="email"
                               autoComplete="email"
-                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
                             />
                             <ErrorMessage
                               name="email"
@@ -137,7 +142,7 @@ export const Contact = () => {
                         <div className="sm:col-span-2">
                           <label
                             htmlFor="subject"
-                            className="block text-sm font-medium text-gray-700"
+                            className="dark:text-[#A6A6A6] block text-sm font-medium text-gray-700"
                           >
                             Subject
                           </label>
@@ -148,7 +153,7 @@ export const Contact = () => {
                               name="subject"
                               id="subject"
                               autoComplete="organization"
-                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border  border-gray-300 rounded-md"
                             />
                             <ErrorMessage
                               name="subject"
@@ -161,7 +166,7 @@ export const Contact = () => {
                         <div className="sm:col-span-2">
                           <label
                             htmlFor="message"
-                            className="block text-sm font-medium text-gray-700"
+                            className="dark:text-[#A6A6A6] block text-sm font-medium text-gray-700"
                           >
                             Message
                           </label>
@@ -186,7 +191,7 @@ export const Contact = () => {
                           <button
                             type="submit"
                             disabled={isSubmitting || isValidating}
-                            className="w-full inline-flex items-center justify-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-md text-black bg-white hover:bg-indigo-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="w-full inline-flex items-center justify-center px-6 py-3 shadow-sm text-base font-medium rounded-md text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500"
                           >
                             Send Message
                           </button>
@@ -199,7 +204,7 @@ export const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {message && <Notification message={message} />}
     </>

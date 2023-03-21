@@ -4,7 +4,6 @@ import Blogs from "./Blogs";
 const Blogpage = () => {
   return (
     <>
-      {/* @ts-ignore */}
       <Blogs />
     </>
   );

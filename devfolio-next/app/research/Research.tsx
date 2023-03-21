@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect } from "react";
 import classNames from "classnames";
 import Link from "next/link";
@@ -7,14 +8,18 @@ import { AuthorProps, PostItemProps } from "../../typings";
 import { posts } from "./data";
 
 export const Research = () => {
+  const isLoaded = document.getElementById("loading");
   useEffect(() => {
-    const card = document.getElementById("card") as HTMLDivElement;
-    card.classList.add("hidden");
+    if (isLoaded) {
+      const sectionElement = document.getElementById(
+        "research"
+      ) as HTMLDivElement;
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
   }, []);
-
   return (
     <>
-      <div>
+      <section id="research">
         <div className="bg-white lg:rounded-2xl dark:bg-[#111111]">
           <div className="container sm:px-5 md:px-10 lg:px-14">
             <div className="pt-12 px-4 md:px-0">
@@ -43,10 +48,10 @@ export const Research = () => {
                       className="block mt-2"
                       target={"_blank"}
                     >
-                      <p className="text-xl font-semibold text-gray-900">
+                      <p className="dark:text-white text-xl font-semibold text-gray-900">
                         {post.title}
                       </p>
-                      <p className="mt-3 text-base text-gray-500">
+                      <p className="mt-3 text-base text-gray-500 dark:text-[#A6A6A6]">
                         {post.description}
                       </p>
                     </Link>
@@ -57,7 +62,7 @@ export const Research = () => {
                           className="mt-6 flex items-center"
                         >
                           <div className="ml-3">
-                            <p className="text-sm font-medium text-gray-900">
+                            <p className="dark:text-white text-sm font-medium text-gray-900">
                               {author.name}
                             </p>
                             <div className="flex space-x-1 text-sm text-gray-500">
@@ -73,7 +78,7 @@ export const Research = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

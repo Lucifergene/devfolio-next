@@ -51,11 +51,12 @@ export default function RootLayout({
             <div className="w-full flex justify-between px-4">
               {/* <!-- website Logo --> */}
               <div className="flex items-center">
-                <img
+                {/* <img
                   className="h-[4rem] lg:h-[6rem]"
-                  src="/assets/images/logo/logo-2.png"
+                  src="/assets/images/logo/logo-4.png"
                   alt="logo"
-                />
+                /> */}
+                <div className="bg-sigLogo dark:bg-sigLogo-dark h-[4rem] lg:h-[6rem] w-48 lg:w-72"></div>
               </div>
 
               <div className="flex items-center">
@@ -74,8 +75,7 @@ export default function RootLayout({
 
             <div className="col-span-12 lg:col-span-8 lg:top-46 relative">
               <Navbar />
-
-              {children}
+              <div className="mt-60 lg:mt-0">{children}</div>
             </div>
           </div>
         </div>

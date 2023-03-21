@@ -1,14 +1,29 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 import { fetchBlogs } from "./utils";
 
-async function Blogs() {
-  const posts = await fetchBlogs();
+const Blogs = () => {
+  const [posts, setPosts] = React.useState([]);
+  useEffect(() => {
+    (async () => {
+      const res = await fetchBlogs();
+      setPosts(res);
+    })();
+  }, []);
+
+  useEffect(() => {
+    if (posts.length > 0) {
+      const sectionElement = document.getElementById("blogs") as HTMLDivElement;
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [posts, setPosts]);
 
   return (
     <>
-      <div>
+      <section id="blogs">
         <div className="bg-white lg:rounded-2xl dark:bg-[#111111]">
           <div className="container sm:px-5 md:px-10 lg:px-14">
             <div className="pt-12 px-4 md:px-0">
@@ -20,12 +35,12 @@ async function Blogs() {
           <div className="pb-16 px-8 overflow-hidden sm:px-6 lg:px-16 lg:pb-12">
             <div className="relative mx-auto ">
               <div>
-                <p className="text-lg text-gray-500">
+                <p className="text-lg text-gray-500 dark:text-[#A6A6A6]">
                   The list of my Articles sorted by where I've worked on them.
                   You can view my Hashnode Profile from{" "}
                   <Link
                     href="https://blog.avikkundu.in/"
-                    className="text-indigo-800"
+                    className="text-blue-800 dark:text-blue-500"
                     target={"_blank"}
                   >
                     here
@@ -53,14 +68,14 @@ async function Blogs() {
                         <p className="dark:text-white text-xl font-semibold text-gray-900 ">
                           {post.title}
                         </p>
-                        <p className="mt-3 text-base text-gray-500">
+                        <p className="mt-3 text-base text-gray-500 dark:text-[#A6A6A6]">
                           {post.brief}
                         </p>
                       </Link>
                       <div className="mt-3">
                         <Link
                           href={"https://www.hashnode.com/post/" + post.slug}
-                          className="text-base font-semibold text-indigo-600 hover:text-indigo-500"
+                          className="text-base font-semibold text-blue-600 hover:text-blue-400"
                         >
                           Read full story
                         </Link>
@@ -72,9 +87,9 @@ async function Blogs() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
-}
+};
 
 export default Blogs;

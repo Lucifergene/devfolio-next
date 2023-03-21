@@ -47,7 +47,7 @@ export const Projects = () => {
 
   return (
     <>
-      <div>
+      <section id="projects">
         <div className="bg-white lg:rounded-2xl dark:bg-[#111111]">
           <div className="container sm:px-5 md:px-10 lg:px-14">
             <div className="pt-12 px-4 md:px-0">
@@ -109,7 +109,7 @@ export const Projects = () => {
             project={projects[1]}
           />
         </div>
-      </div>
+      </section>
     </>
   );
 };

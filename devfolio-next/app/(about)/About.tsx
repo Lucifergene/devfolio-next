@@ -1,17 +1,10 @@
-"use client";
-
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
 
 const About = () => {
-  useEffect(() => {
-    const card = document.getElementById("card") as HTMLDivElement;
-    card.classList.remove("hidden");
-  }, []);
-
   return (
     <>
-      <div className="bg-white lg:rounded-2xl dark:bg-[#111111]">
+      <section id="about" className="bg-white lg:rounded-2xl dark:bg-[#111111]">
         <div className="container sm:px-5 md:px-10 lg:px-14">
           <div className="pt-12 px-4 md:px-0">
             <h2 className="after-effect after:left-56">About Me</h2>
@@ -20,39 +13,48 @@ const About = () => {
         </div>
 
         <div className="pb-12 px-12 lg:px-16 overflow-hidden">
-          <p className="text-gray-700 dark:text-white font-normal text-2xl font-source text-justify">
+          <p className="text-gray-700 dark:text-white font-normal text-2xl font-source">
             Hey, I'm Avik. I work as a Software Engineer specializing in{" "}
             <Link
               href="https://www.redhat.com/en/technologies/cloud-computing/openshift"
-              className="text-red-500"
+              className="text-blue-700 dark:text-blue-400"
             >
               Openshift Container Platform
             </Link>{" "}
             and{" "}
-            <Link href="https://www.kubernetes.io" className="text-red-500">
+            <Link
+              href="https://www.kubernetes.io"
+              className="text-blue-700 dark:text-blue-400"
+            >
               Kubernetes
             </Link>{" "}
             at{" "}
-            <Link href="https://www.redhat.com/en/" className="text-red-500">
+            <Link
+              href="https://www.redhat.com/en/"
+              className="text-blue-700 dark:text-blue-400"
+            >
               Red Hat
             </Link>
             . I'm an open-source enthusiast currently focused on Platform
             Engineering and Cloud-native technologies.
-            <p className="text-gray-700 dark:text-white font-normal text-2xl font-source text-justify pt-2">
+            <p className="text-gray-700 dark:text-white font-normal text-2xl font-source pt-2">
               I'm the member of{" "}
-              <Link href="https://aws.amazon.com/" className="text-red-500">
+              <Link
+                href="https://aws.amazon.com/"
+                className="text-blue-700 dark:text-blue-400"
+              >
                 AWS Community Builders
               </Link>{" "}
               program, where I organize workshops and write about various
               services offered by AWS.
             </p>
           </p>
-          <p className="text-gray-700 dark:text-white font-normal text-2xl font-source text-justify pt-2">
+          <p className="text-gray-700 dark:text-white font-normal text-2xl font-source pt-2">
             I like to solve problems, contribute to open source, mentor others,
             and I share what I learn through writing and speaking.
           </p>
 
-          <h3 className="text-4xl text-slate-900 dark:text-white font-semibold pt-6 pb-4">
+          <h3 className="text-4xl text-slate-900 dark:text-white font-semibold pt-8 pb-4">
             Certifications
           </h3>
 
@@ -106,143 +108,63 @@ const About = () => {
             </div>
           </div>
 
-          {/* <div className="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
-            <div className="p-4 rounded-md border border-slate-200 dark:border-slate-800 flex gap-5">
-              <div>
-                <img
-                  className="w-28"
-                  src="../../../assets/images/icons/icon1.svg"
-                  alt="icon-1"
-                />
-              </div>
-              <div>
-                <h4 className="dark:text-white text-xl font-semibold">
-                  Ui/Ux Design
-                </h4>
-                <p className="leading-8 text-gray-lite dark:text-[#A6A6A6]">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam euismod volutpat.
-                </p>
-              </div>
-            </div>
-            <div className="p-4 rounded-md border border-slate-200 dark:border-slate-800 flex gap-5">
-              <div>
-                <img
-                  className="w-28"
-                  src="../../../assets/images/icons/icon2.svg"
-                  alt="icon-2"
-                />
-              </div>
-              <div>
-                <h4 className="dark:text-white text-xl font-semibold">
-                  App Development
-                </h4>
-                <p className="leading-8 text-gray-lite dark:text-[#A6A6A6]">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam euismod volutpat.
-                </p>
-              </div>
-            </div>
-            <div className="p-4 rounded-md border border-slate-200 dark:border-slate-800 flex gap-5">
-              <div>
-                <img
-                  className="w-28"
-                  src="../../../assets/images/icons/icon3.svg"
-                  alt="icon-3"
-                />
-              </div>
-              <div>
-                <h4 className="dark:text-white text-xl font-semibold">
-                  Photography
-                </h4>
-                <p className="leading-8 text-gray-lite dark:text-[#A6A6A6]">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam euismod volutpat.
-                </p>
-              </div>
-            </div>
-            <div className="p-4 rounded-md border border-slate-200 dark:border-slate-800 flex gap-5">
-              <div>
-                <img
-                  className="w-28"
-                  src="../../../assets/images/icons/icon4.svg"
-                  alt="icon-4"
-                />
-              </div>
-              <div>
-                <h4 className="dark:text-white text-xl font-semibold">
-                  Photography
-                </h4>
-                <p className="leading-8 text-gray-lite dark:text-[#A6A6A6]">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam euismod volutpat.
-                </p>
-              </div>
-            </div>
-            <div className="p-4 rounded-md border border-slate-200 dark:border-slate-800 flex gap-5">
-              <div>
-                <img
-                  className="w-28"
-                  src="../../../assets/images/icons/icon5.svg"
-                  alt="icon-5"
-                />
-              </div>
-              <div>
-                <h4 className="dark:text-white text-xl font-semibold">
-                  Management
-                </h4>
-                <p className="leading-8 text-gray-lite dark:text-[#A6A6A6]">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam euismod volutpat.
-                </p>
-              </div>
-            </div>
-            <div className="p-4 rounded-md border border-slate-200 dark:border-slate-800 flex gap-5">
-              <div>
-                <img
-                  className="w-28"
-                  src="../../../assets/images/icons/icon5.svg"
-                  alt="icon-6"
-                />
-              </div>
-              <div>
-                <h4 className="dark:text-white text-xl font-semibold">
-                  Web Development
-                </h4>
-                <p className="leading-8 text-gray-lite dark:text-[#A6A6A6]">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam euismod volutpat.
-                </p>
-              </div>
-            </div>
-          </div> */}
           <div>
-            <h3 className="text-4xl text-slate-900 dark:text-slate-50 font-semibold pt-6 pb-4">
-              Achievements
+            <h3 className="text-4xl text-slate-900 dark:text-slate-50 font-semibold pt-10">
+              Previous Talks
             </h3>
-            <div className="brand_slider py-6 px-6 rounded-xl dark:bg-black">
-              {/* <div className="slide_item py-4 px-8 rounded-md">
-                <img src="../../../assets/images/certs/ccna.png" alt="image" />
+            <div className="pt-2">
+              <p className="text-sm text-gray-500">
+                Kubernetes Community Days Chennai - June 2022
+              </p>
+              <p className="dark:text-white text-xl font-semibold text-gray-900 ">
+                Creating Serverless CI/CD on Kubernetes with GitOps
+              </p>
+              <div className="inline-block">
+                <span
+                  className={
+                    "bg-blue-500 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium mt-4 mr-4  "
+                  }
+                >
+                  Knative
+                </span>
+                <span
+                  className={
+                    "bg-purple-500 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium mt-4 mr-4"
+                  }
+                >
+                  Tekton
+                </span>
+                <span
+                  className={
+                    "bg-orange-500 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium mt-4 mr-4"
+                  }
+                >
+                  ArgoCD
+                </span>
               </div>
-              <div className="slide_item py-4 px-8 rounded-md">
-                <img src="../../../assets/images/certs/ccna.png" alt="image" />
+              <p className="mt-3 text-base dark:text-[#A6A6A6] text-gray-500">
+                Serverless has become one of the most used terms for cloud
+                computing. Enterprises have started to adopt and maintain
+                several open-source projects which tend to bring all the
+                advantages of serverless to the way applications are deployed on
+                Kubernetes currently. This session would demonstrate how to
+                create Cloud-Native CI/CD Pipelines for deploying serverless
+                applications on Kubernetes following GitOps Practices.
+              </p>
+
+              <div className="mt-3">
+                <Link
+                  href={"https://www.youtube.com/watch?v=_aqlanvWL-c"}
+                  target="_blank"
+                  className="text-base font-semibold text-blue-600 hover:text-blue-400"
+                >
+                  Watch recording
+                </Link>
               </div>
-              <div className="slide_item py-4 px-8 rounded-md">
-                <img src="../../../assets/images/certs/ccna.png" alt="image" />
-              </div>
-              <div className="slide_item py-4 px-8 rounded-md">
-                <img src="../../../assets/images/certs/ccna.png" alt="image" />
-              </div>
-              <div className="slide_item py-4 px-8 rounded-md">
-                <img src="../../../assets/images/certs/ccna.png" alt="image" />
-              </div>
-              <div className="slide_item py-4 px-8 rounded-md">
-                <img src="../../../assets/images/certs/ccna.png" alt="image" />
-              </div> */}
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

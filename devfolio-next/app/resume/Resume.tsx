@@ -2,14 +2,19 @@
 import React, { useEffect } from "react";
 
 export const Resume = () => {
+  const isLoaded = document.getElementById("loading");
   useEffect(() => {
-    const card = document.getElementById("card") as HTMLDivElement;
-    card.classList.add("hidden");
+    if (isLoaded) {
+      const sectionElement = document.getElementById(
+        "resume"
+      ) as HTMLDivElement;
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
   }, []);
 
   return (
     <>
-      <div>
+      <section id="resume">
         <div className="bg-white lg:rounded-2xl dark:bg-[#111111]">
           <div className="container sm:px-5 md:px-10 lg:px-14">
             <div className="pt-12 px-4 md:px-0">
@@ -23,7 +28,7 @@ export const Resume = () => {
               {/* <!-- experience --> */}
               <div>
                 <div className="flex items-center space-x-2 mb-4 px-4 lg:px-0">
-                  <i className="fa-solid text-6xl text-[#F95054] fa-briefcase"></i>
+                  <i className="fa-solid text-6xl text-blue-500 fa-briefcase"></i>
                   <h4 className="text-5xl dark:text-white font-medium">
                     {" "}
                     Experience{" "}
@@ -67,7 +72,7 @@ export const Resume = () => {
               {/* <!-- education - --> */}
               <div>
                 <div className="flex items-center space-x-2 mb-4 mt-8 px-4 lg:px-0">
-                  <i className="fa-solid text-6xl text-[#F95054] fa-graduation-cap"></i>
+                  <i className="fa-solid text-6xl text-blue-500 fa-graduation-cap"></i>
                   <h4 className="text-5xl dark:text-white font-medium">
                     {" "}
                     Education{" "}
@@ -211,7 +216,7 @@ export const Resume = () => {
             {/* <!-- working section end --> */}
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

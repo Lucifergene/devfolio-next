@@ -5,7 +5,7 @@ const Card = () => {
     <>
       <div
         id="card"
-        className="col-span-12 md:col-span-4 lg:block lg:sticky h-screen top-44 hidden"
+        className="col-span-12 md:col-span-4 lg:block lg:sticky h-screen top-44"
       >
         <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
           {/* <!-- profile image --> */}
@@ -50,7 +50,7 @@ const Card = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="socialbtn text-[#383c42]">
+                <span className="socialbtn text-[#383c42] dark:text-[#A6A6A6]">
                   <i className="fa-brands fa-github"></i>
                 </span>
               </a>
