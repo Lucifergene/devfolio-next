@@ -2155,16 +2155,16 @@ video {
 }
 
 .bg-homeBg {
-  background-image: url("../images/background/sample-10.jpg");
+  background-image: url("../images/background/sample-10.webp");
 }
 
 .bg-profilePic {
-  background-image: url("../images/about/pic-3.png");
+  background-image: url("../images/about/pic-3.webp");
   background-size: 100% 100%;
 }
 
 .bg-sigLogo {
-  background-image: url("../images/logo/logo-4.png");
+  background-image: url("../images/logo/logo-4.webp");
   background-size: 100% 100%;
 }
 
@@ -2173,11 +2173,11 @@ video {
 }
 
 .bg-close-light {
-  background-image: url("../images/icons/closelight.jpg");
+  background-image: url("../images/icons/closelight.webp");
 }
 
 .bg-previewBg {
-  background-image: url("../images/background/previewbg.png");
+  background-image: url("../images/background/previewbg.webp");
 }
 
 .from-\[\#FA5252\] {
@@ -3046,25 +3046,25 @@ video {
 }
 
 .dark .dark\:bg-homeTwoBg-dark {
-  background-image: url("../images/background/sample-4.jpg");
+  background-image: url("../images/background/sample-3.webp");
 }
 
 .dark .dark\:bg-profilePic-dark {
-  background-image: url("../images/about/pic-9.png");
+  background-image: url("../images/about/pic-9.webp");
   background-size: 100% 100%;
 }
 
 .dark .dark\:bg-sigLogo-dark {
-  background-image: url("../images/logo/logo-5.png");
+  background-image: url("../images/logo/logo-5.webp");
   background-size: 100% 100%;
 }
 
 .dark .dark\:bg-homeBg-dark {
-  background-image: url("../images/background/bg-dark.jpg");
+  background-image: url("../images/background/bg-dark.webp");
 }
 
 .dark .dark\:bg-close-dark {
-  background-image: url("../images/icons/closeDark.png");
+  background-image: url("../images/icons/closeDark.webp");
 }
 
 .dark .dark\:text-white {

@@ -10,7 +10,7 @@ const Card = () => {
         <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
           {/* <!-- profile image --> */}
           {/* <img
-            src="./assets/images/about/pic-3.png"
+            src="./assets/images/about/pic-3.webp"
             className="w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px] "
             alt="about avatar"
           /> */}
@@ -124,7 +124,7 @@ const Card = () => {
               <button className="dowanload-btn">
                 <img
                   className="mr-3"
-                  src="./assets/images/icons/dowanload.png"
+                  src="./assets/images/icons/dowanload.webp"
                   alt="icon"
                 />
                 Download Resume

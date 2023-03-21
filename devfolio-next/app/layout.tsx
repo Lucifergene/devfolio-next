@@ -53,7 +53,7 @@ export default function RootLayout({
               <div className="flex items-center">
                 {/* <img
                   className="h-[4rem] lg:h-[6rem]"
-                  src="/assets/images/logo/logo-4.png"
+                  src="/assets/images/logo/logo-4.webp"
                   alt="logo"
                 /> */}
                 <div className="bg-sigLogo dark:bg-sigLogo-dark h-[4rem] lg:h-[6rem] w-48 lg:w-72"></div>

@@ -72,7 +72,7 @@ const About = () => {
                   target="_blank"
                   className="my-2"
                 >
-                  <img src="../../../assets/images/certs/aws.png" />
+                  <img src="../../../assets/images/certs/aws.webp" />
                 </Link>
               </div>
               <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
@@ -81,7 +81,7 @@ const About = () => {
                   target="_blank"
                   className="my-2"
                 >
-                  <img src="../../../assets/images/certs/azure.png" />
+                  <img src="../../../assets/images/certs/azure.webp" />
                 </Link>
               </div>
               <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
@@ -90,7 +90,7 @@ const About = () => {
                   target="_blank"
                   className="my-2"
                 >
-                  <img src="../../../assets/images/certs/do180.png" />
+                  <img src="../../../assets/images/certs/do180.webp" />
                 </Link>
               </div>
               <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
@@ -99,7 +99,7 @@ const About = () => {
                   target="_blank"
                   className="my-2"
                 >
-                  <img src="../../../assets/images/certs/gitops.png" />
+                  <img src="../../../assets/images/certs/gitops.webp" />
                 </Link>
               </div>
               <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
@@ -108,7 +108,7 @@ const About = () => {
                   target="_blank"
                   className="my-2"
                 >
-                  <img src="../../../assets/images/certs/ccna.png" />
+                  <img src="../../../assets/images/certs/ccna.webp" />
                 </Link>
               </div>
             </div>

@@ -162,11 +162,11 @@ input:-webkit-autofill:focus {
 }
 
 .close-light {
-  background-image: url(../images/icons/closelight.jpg);
+  background-image: url(../images/icons/closelight.webp);
 }
 
 .close-dark {
-  background-image: url(../images/icons/closeDark.png);
+  background-image: url(../images/icons/closeDark.webp);
 }
 
 .modal a.close-modal {

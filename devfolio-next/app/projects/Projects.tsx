@@ -10,7 +10,7 @@ const projects = [
   {
     title: "COVID-Predictioned",
     type: "Web",
-    imageUrl: "../../../assets/images/blog_images/covid-web.png",
+    imageUrl: "../../../assets/images/blog_images/covid-web.webp",
     bio: "The project is a Computer-Aided Diagnostic System which is used to predict whether a person has been infected with COVID-19. Currently, the reference project does the only classification between COVID and non-COVID X-Rays using Modified DenseNet architectures. This project involves a Web Application, REST API, Dockerhub Container and automated pipeline to deploy the COVID Prediction model based on Chest Radiological Images. Containerized Deployment ensures platform independence during deployment.",
     githubURL: "https://github.com/Lucifergene/covid-prediction-classifier",
     tags: [
@@ -26,7 +26,7 @@ const projects = [
   {
     title: "BlogVista",
     type: "Web",
-    imageUrl: "../../../assets/images/blog_images/blogvista.png",
+    imageUrl: "../../../assets/images/blog_images/blogvista.webp",
     bio: "A Blogging Application built using NodeJS, ExpressJS, MongoDB, EJS, Bootstrap, HTML, CSS, JavaScript, and deployed on Heroku. The application is a full-stack application with a RESTful API. The application is a blogging platform where users can create, read, update, and delete their blogs. The application also has a feature to comment on the blogs. Users can register and login to the application using their email and password. The application also has a feature to reset the password using the email. The application is also containerized using Docker and deployed on DockerHub.",
     githubURL: "https://github.com/Lucifergene/blogvista",
     tags: [
