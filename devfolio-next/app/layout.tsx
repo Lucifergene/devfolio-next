@@ -75,9 +75,7 @@ export default function RootLayout({
 
             <div className="col-span-12 lg:col-span-8 lg:top-46 relative">
               <Navbar />
-              <div id="children" className="mt-60 lg:mt-0">
-                {children}
-              </div>
+              {children}
             </div>
           </div>
         </div>
