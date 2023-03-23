@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { showCard } from "../utils";
@@ -72,7 +73,12 @@ const About = () => {
                   target="_blank"
                   className="my-2"
                 >
-                  <img src="../../../assets/images/certs/aws.webp" />
+                  <Image
+                    src="/assets/images/certs/aws.webp"
+                    alt="AWS Certified Solutions Architect - Associate"
+                    width={200}
+                    height={200}
+                  />
                 </Link>
               </div>
               <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
@@ -81,7 +87,12 @@ const About = () => {
                   target="_blank"
                   className="my-2"
                 >
-                  <img src="../../../assets/images/certs/azure.webp" />
+                  <Image
+                    src="/assets/images/certs/azure.webp"
+                    alt="Microsoft Certified: Azure Fundamentals"
+                    width={200}
+                    height={200}
+                  />
                 </Link>
               </div>
               <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
@@ -90,7 +101,12 @@ const About = () => {
                   target="_blank"
                   className="my-2"
                 >
-                  <img src="../../../assets/images/certs/do180.webp" />
+                  <Image
+                    src="/assets/images/certs/do180.webp"
+                    alt="DO180: Red Hat OpenShift Administration I"
+                    width={200}
+                    height={200}
+                  />
                 </Link>
               </div>
               <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
@@ -99,7 +115,12 @@ const About = () => {
                   target="_blank"
                   className="my-2"
                 >
-                  <img src="../../../assets/images/certs/gitops.webp" />
+                  <Image
+                    src="/assets/images/certs/gitops.webp"
+                    alt="GitOps Fundamentals"
+                    width={200}
+                    height={200}
+                  />
                 </Link>
               </div>
               <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
@@ -108,7 +129,12 @@ const About = () => {
                   target="_blank"
                   className="my-2"
                 >
-                  <img src="../../../assets/images/certs/ccna.webp" />
+                  <Image
+                    src="/assets/images/certs/ccna.webp"
+                    alt="Cisco Certified Network Associate"
+                    width={200}
+                    height={200}
+                  />
                 </Link>
               </div>
             </div>
