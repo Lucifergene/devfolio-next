@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import Script from "next/script";
 import Card from "./components/Card";
 import { DarkModeToggle } from "./components/DarkModeToggle";
 import { Navbar } from "./components/Navbar";
@@ -44,6 +45,21 @@ export default function RootLayout({
         {/* <!--=== main css ===--> */}
         <link rel="stylesheet" href="/assets/css/tailwind.css" />
         <link rel="stylesheet" href="/assets/css/custom.css" />
+
+        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-RN06F8M1G9"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-RN06F8M1G9');
+        `}
+        </Script>
       </head>
       <body>
         <div className="bg-homeBg dark:bg-homeTwoBg-dark min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full">
@@ -51,11 +67,6 @@ export default function RootLayout({
             <div className="w-full flex justify-between px-4">
               {/* <!-- website Logo --> */}
               <div className="flex items-center">
-                {/* <img
-                  className="h-[4rem] lg:h-[6rem]"
-                  src="/assets/images/logo/logo-4.webp"
-                  alt="logo"
-                /> */}
                 <div className="bg-sigLogo dark:bg-sigLogo-dark h-[4rem] lg:h-[6rem] w-48 lg:w-72"></div>
               </div>
 
@@ -79,13 +90,6 @@ export default function RootLayout({
             </div>
           </div>
         </div>
-
-        {/* <script src="/assets/js/vendor/jquary.min.js"></script> */}
-        {/* <script src="/assets/js/vendor/slick.js"></script> */}
-        {/* <script src="/assets/js/vendor/isotope.pkgd.min.js"></script> */}
-        {/* <script src="/assets/js/vendor/jquery.modal.min.js"></script> */}
-        {/* <!-- main js --> */}
-        {/* <script src="/assets/js/main.js"></script> */}
       </body>
     </html>
   );
