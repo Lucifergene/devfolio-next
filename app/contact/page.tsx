@@ -1,7 +1,7 @@
 import React from "react";
 import { Contact } from "./Contact";
 
-const ContactPage = () => {
+const ContactPage: React.FC = () => {
   return (
     <>
       <Contact />

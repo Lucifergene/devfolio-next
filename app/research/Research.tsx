@@ -8,7 +8,7 @@ import { AuthorProps, PostItemProps } from "../../typings";
 import { posts } from "./data";
 import { hideCard } from "../utils";
 
-export const Research = () => {
+export const Research: React.FC = () => {
   useEffect(() => {
     hideCard("research");
   }, []);

@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { hideCard } from "../utils";
 
-export const Resume = () => {
+export const Resume: React.FC = () => {
   useEffect(() => {
     hideCard("resume");
   }, []);

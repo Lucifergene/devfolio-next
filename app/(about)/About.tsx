@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import { showCard } from "../utils";
 
-const About = () => {
+const About: React.FC = () => {
   useEffect(() => {
     showCard();
   }, []);

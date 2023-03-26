@@ -20,3 +20,11 @@ export type IContactProps = {
   subject: string;
   message: string;
 };
+
+export type IPostItemProps = {
+  title: string;
+  brief: string;
+  dateAdded: string;
+  dateUpdated: string;
+  slug: string;
+};

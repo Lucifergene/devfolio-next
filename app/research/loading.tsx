@@ -1,7 +1,7 @@
 import React from "react";
 import { LoadingSkeleton } from "../components/LoadingSkeleton";
 
-const loading = () => {
+const loading: React.FC = () => {
   return (
     <>
       <LoadingSkeleton />

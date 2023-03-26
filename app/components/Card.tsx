@@ -1,4 +1,11 @@
 import React from "react";
+import {
+  EMAIL_ID,
+  GITHUB_URL,
+  HASHNODE_URL,
+  LINKEDIN_URL,
+  TWITTER_URL,
+} from "../../const";
 
 const Card = () => {
   return (
@@ -9,11 +16,6 @@ const Card = () => {
       >
         <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
           {/* <!-- profile image --> */}
-          {/* <img
-            src="./assets/images/about/pic-3.webp"
-            className="w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px] "
-            alt="about avatar"
-          /> */}
           <div className="bg-profilePic dark:bg-profilePic-dark w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px] "></div>
 
           <div className="pt-[100px] pb-8">
@@ -25,42 +27,26 @@ const Card = () => {
             </h3>
             <div className="flex justify-center space-x-3">
               {/* <!-- linkedin icon and link --> */}
-              <a
-                href="https://www.linkedin.com/in/avik-kundu-0b837715b"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
                 <span className="socialbtn text-[#0072b1]">
                   <i className="fa-brands fa-linkedin-in"></i>
                 </span>
               </a>
               {/* <!-- twitter icon and link --> */}
-              <a
-                href="https://twitter.com/avik6028"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={TWITTER_URL} target="_blank" rel="noopener noreferrer">
                 <span className="socialbtn text-[#1C9CEA]">
                   <i className="fa-brands fa-twitter"></i>
                 </span>
               </a>
               {/* <!-- github icon and link --> */}
-              <a
-                href="https://github.com/Lucifergene/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
                 <span className="socialbtn text-[#383c42] dark:text-[#A6A6A6]">
                   <i className="fa-brands fa-github"></i>
                 </span>
               </a>
 
               {/* <!-- hashnode icon and link --> */}
-              <a
-                href="https://blog.avikkundu.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={HASHNODE_URL} target="_blank" rel="noopener noreferrer">
                 <span className="socialbtn text-[#325ccf]">
                   <i className="fa-brands fa-hashnode"></i>
                 </span>
@@ -101,7 +87,7 @@ const Card = () => {
                   <p className="text-xs text-[#44566C] dark:text-[#A6A6A6]">
                     Email
                   </p>
-                  <p className="dark:text-white">avikkundu8d@gmail.com</p>
+                  <p className="dark:text-white">{EMAIL_ID}</p>
                 </div>
               </div>
 

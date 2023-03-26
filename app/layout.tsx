@@ -1,15 +1,70 @@
 import "../styles/globals.css";
 import Script from "next/script";
+import { Metadata } from "next/types";
 import Card from "./components/Card";
 import { DarkModeToggle } from "./components/DarkModeToggle";
 import { Navbar } from "./components/Navbar";
 import { NavbarMobile } from "./components/NavbarMobile";
 import { NavMobileToggle } from "./components/NavMobileToggle";
 
-export const metadata = {
-  title: "Devfolio | Avik Kundu",
-  description: "Software Engineer Portfolio",
-  keywords: ["avik kundu", "portfolio", "software engineer", "redhat"],
+export const metadata: Metadata = {
+  title: "Avik Kundu | DevFolio",
+  description:
+    "Hey 👋, I'm Avik,  Software Engineer specializing in Full-stack development, Kubernetes and open-source technologies.",
+  applicationName: "Avik's Portfolio Site",
+  authors: {
+    name: "Avik Kundu",
+    url: "https://www.avikkundu.in/",
+  },
+  creator: "Avik Kundu",
+  publisher: "Vercel",
+  generator: "Next.js",
+  keywords: [
+    "Avik Kundu",
+    "portfolio",
+    "software engineer",
+    "Redhat",
+    "Nextjs",
+    "Tailwind",
+    "developer",
+    "Kubernetes",
+    "opensource",
+    "full stack",
+    "ReactJS",
+  ],
+  referrer: "origin",
+  openGraph: {
+    type: "website",
+    title: "Avik Kundu | DevFolio",
+    description:
+      "Hey 👋, I'm Avik,  Software Engineer specializing in Full-stack development, Kubernetes and open-source technologies. Explore my portfolio and reach out to me for any discussion.",
+    siteName: "Avik's Portfolio Site",
+    images: ["https://i.imgur.com/xUqk6VJ.png"],
+    url: "https://www.avikkundu.in/",
+  },
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "cyan" },
+    { media: "(prefers-color-scheme: dark)", color: "#45505B" },
+  ],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
+  icons: [
+    {
+      url: "/favicon.ico",
+      type: "image/x-icon",
+    },
+  ],
+  twitter: {
+    card: "summary_large_image",
+    title: "Avik Kundu | DevFolio",
+    creator: "@avik6028",
+    site: "@avik6028",
+    description:
+      "Hey 👋, I'm Avik,  Software Engineer specializing in Full-stack development, Kubernetes and open-source technologies. Explore my portfolio and reach out to me for any discussion.",
+    images: ["https://i.imgur.com/xUqk6VJ.png"],
+  },
 };
 
 export default function RootLayout({
@@ -21,13 +76,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-
-        <meta name="msapplication-TileColor" content="#0563BB" />
-        <meta name="theme-color" content="#45505B" />
-
-        {/* Favicons */}
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
         {/* <!--=== fontaswesome ===--> */}
         <link rel="stylesheet" href="/assets/fontaswesome/css/all.min.css" />
