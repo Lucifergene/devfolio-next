@@ -23,7 +23,7 @@ const validate: any = object({
     .min(20, "Message must be at least 20 characters"),
 });
 
-export const Contact = () => {
+export const Contact: React.FC = () => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
@@ -76,7 +76,7 @@ export const Contact = () => {
                     <br /> Feel free to contact me.
                   </p>
                 </div>
-                <div className="mt-12">
+                <div className="mt-12 px-4">
                   <Formik
                     initialValues={initialValues}
                     validationSchema={validate}

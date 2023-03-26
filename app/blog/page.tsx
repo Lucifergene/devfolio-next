@@ -1,7 +1,7 @@
 import React from "react";
 import Blogs from "./Blogs";
 
-const Blogpage = () => {
+const Blogpage: React.FC = () => {
   return (
     <>
       <Blogs />

@@ -1,8 +1,14 @@
 import { Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-export const Notification = ({ message }: any) => {
-  const [show, setShow] = useState(true);
+interface NotificationProps {
+  message: string;
+}
+
+export const Notification: React.FC<NotificationProps> = ({
+  message,
+}: NotificationProps) => {
+  const [show, setShow] = useState<boolean>(true);
 
   return (
     <>
