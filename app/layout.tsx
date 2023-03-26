@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     url: "https://www.avikkundu.in/",
   },
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "cyan" },
+    { media: "(prefers-color-scheme: light)", color: "#0065E2" },
     { media: "(prefers-color-scheme: dark)", color: "#45505B" },
   ],
   viewport: {
