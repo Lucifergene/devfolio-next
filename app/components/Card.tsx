@@ -83,11 +83,13 @@ const Card = () => {
                 <span className="socialbtn bg-white dark:bg-black text-[#6AB5B9] shadow-md">
                   <i className="fa-solid fa-envelope-open-text"></i>
                 </span>
-                <div className="text-left ml-2.5">
+                <div className="text-left ml-2.5" title={EMAIL_ID}>
                   <p className="text-xs text-[#44566C] dark:text-[#A6A6A6]">
                     Email
                   </p>
-                  <p className="dark:text-white">{EMAIL_ID}</p>
+                  <p className="dark:text-white truncate md:w-36 xl:w-auto">
+                    {EMAIL_ID}
+                  </p>
                 </div>
               </div>
 
