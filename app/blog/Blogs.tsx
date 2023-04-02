@@ -6,13 +6,16 @@ import { hideCard } from "../utils";
 import { fetchBlogs } from "./blog-utils";
 import { IPostItemProps } from "../../typings";
 import { HASHNODE_URL } from "../../const";
+import { BlogSkeleton } from "./BlogSkeleton";
+
+export const NUMBER_OF_BLOGS = 5;
 
 const Blogs: React.FC = () => {
   const [posts, setPosts] = React.useState<IPostItemProps[]>([]);
   useEffect(() => {
     (async () => {
       const allPosts: IPostItemProps[] = await fetchBlogs();
-      setPosts(allPosts);
+      setPosts(allPosts.slice(0, NUMBER_OF_BLOGS));
     })();
   }, []);
 
@@ -35,8 +38,8 @@ const Blogs: React.FC = () => {
             <div className="relative mx-auto ">
               <div>
                 <p className="text-lg text-gray-500 dark:text-[#A6A6A6]">
-                  The list of my Articles sorted by where I've worked on them.
-                  You can view my Hashnode Profile from{" "}
+                  Some of my Articles sorted by their date of creation. You can
+                  view all my articles on Hashnode from{" "}
                   <Link
                     href={HASHNODE_URL}
                     className="text-blue-800 dark:text-blue-500"
@@ -46,44 +49,48 @@ const Blogs: React.FC = () => {
                   </Link>
                 </p>
               </div>
-              <div className="mt-6 pt-10">
-                {posts.map((post: IPostItemProps) => {
-                  const dateObj = new Date(post.dateAdded);
-                  const date = dateObj.getDate();
-                  const month = dateObj.toLocaleString("default", {
-                    month: "long",
-                  });
-                  const dateAdded = date + " " + month;
-                  return (
-                    <div key={post.title} className="mb-6">
-                      <p className="text-sm text-gray-500">
-                        <time dateTime={post.dateAdded}>{dateAdded}</time>
-                      </p>
-                      <Link
-                        href={"https://www.hashnode.com/post/" + post.slug}
-                        className="mt-2 block"
-                        target={"_blank"}
-                      >
-                        <p className="dark:text-white text-xl font-semibold text-gray-900 ">
-                          {post.title}
+              {posts.length === 0 ? (
+                <BlogSkeleton />
+              ) : (
+                <div className="mt-6 pt-10">
+                  {posts.map((post: IPostItemProps) => {
+                    const dateObj = new Date(post.dateAdded);
+                    const date = dateObj.getDate();
+                    const month = dateObj.toLocaleString("default", {
+                      month: "long",
+                    });
+                    const dateAdded = date + " " + month;
+                    return (
+                      <div key={post.title} className="mb-6">
+                        <p className="text-sm text-gray-500">
+                          <time dateTime={post.dateAdded}>{dateAdded}</time>
                         </p>
-                        <p className="mt-3 text-base text-gray-500 dark:text-[#A6A6A6]">
-                          {post.brief}
-                        </p>
-                      </Link>
-                      <div className="mt-3">
                         <Link
                           href={"https://www.hashnode.com/post/" + post.slug}
-                          className="text-base font-semibold text-blue-600 hover:text-blue-400"
+                          className="mt-2 block"
                           target={"_blank"}
                         >
-                          Read article
+                          <p className="dark:text-white text-xl font-semibold text-gray-900 ">
+                            {post.title}
+                          </p>
+                          <p className="mt-3 text-base text-gray-500 dark:text-[#A6A6A6]">
+                            {post.brief}
+                          </p>
                         </Link>
+                        <div className="mt-3">
+                          <Link
+                            href={"https://www.hashnode.com/post/" + post.slug}
+                            className="text-base font-semibold text-blue-600 hover:text-blue-400"
+                            target={"_blank"}
+                          >
+                            Read article
+                          </Link>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           </div>
         </div>
