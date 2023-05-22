@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import {
@@ -25,6 +25,7 @@ interface ParamProps {
 }
 
 const RedirectsPage = ({ params }: ParamProps) => {
+  const [url, setUrl] = useState("");
   useEffect(() => {
     hideCard("redirect");
   }, []);
@@ -73,7 +74,7 @@ const RedirectsPage = ({ params }: ParamProps) => {
                 </p>
                 <LoaderSVG />
               </div>
-              {redirect(redirectLink(params.redirects))}
+              {setUrl(redirectLink(params.redirects))}
             </>
           ) : (
             <>
@@ -105,6 +106,8 @@ const RedirectsPage = ({ params }: ParamProps) => {
           )}
         </div>
       </section>
+
+      {url && redirect(url)}
     </>
   );
 };
