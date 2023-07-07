@@ -134,6 +134,24 @@ export const NavbarMobile = () => {
               Contact
             </Link>
           </li>
+          <li>
+            <Link
+              className={classNames(
+                pathname === "/links"
+                  ? "mobile-menu-items-active"
+                  : "mobile-menu-items"
+              )}
+              href="/links"
+              onClick={() => {
+                handleClose("links");
+              }}
+            >
+              <span className="mr-2 text-xl">
+                <i className="fa-solid fa-up-right-from-square"></i>
+              </span>
+              Links
+            </Link>
+          </li>
         </ul>
       </nav>
     </>
