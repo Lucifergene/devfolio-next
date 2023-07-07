@@ -4,6 +4,7 @@ import {
   GITHUB_URL,
   HASHNODE_URL,
   LINKEDIN_URL,
+  RESUME_URL,
   TWITTER_URL,
 } from "../../const";
 
@@ -108,7 +109,7 @@ const Card = () => {
             {/* <!-- personal info end --> */}
 
             {/* <!-- dowanload button --> */}
-            {/* <a href="https://drive.google.com/file/d/11Ws3nFlWCiZYKAgwBoQIxKtQauh4jziJ/view?usp=sharing">
+            {/* <a href={RESUME_URL}>
               <button className="dowanload-btn">
                 <img
                   className="mr-3"

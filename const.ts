@@ -12,3 +12,6 @@ export const PORTFOLIO_URL = "https://www.avikkundu.in/";
 export const SPEAKERDECK_URL = "https://speakerdeck.com/avik6028";
 
 export const EMAIL_ID = "avikkundu8d@gmail.com";
+
+export const RESUME_URL =
+  "https://drive.google.com/uc?export=download&id=11Ws3nFlWCiZYKAgwBoQIxKtQauh4jziJ";
