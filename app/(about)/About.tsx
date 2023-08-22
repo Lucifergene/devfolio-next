@@ -66,7 +66,21 @@ const About: React.FC = () => {
           </h3>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:p-0 rounded-lg dark:bg-transparent">
-            <div className="grid grid-cols-3 gap-8 md:grid-cols-6 lg:grid-cols-5">
+            <div className="grid grid-cols-3 gap-8 md:grid-cols-6 lg:grid-cols-6">
+              <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                <Link
+                  href="https://www.credly.com/badges/9cb105f9-dc97-4fd4-a1e8-188c6979e693"
+                  target="_blank"
+                  className="my-2"
+                >
+                  <Image
+                    src="/assets/images/certs/ckad.webp"
+                    alt="CKAD: Certified Kubernetes Application Developer"
+                    width={200}
+                    height={200}
+                  />
+                </Link>
+              </div>
               <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
                 <Link
                   href="https://www.credly.com/badges/a3b0d7d5-0aa6-4ff2-8df6-836635d8d37a"
