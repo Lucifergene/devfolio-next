@@ -208,6 +208,51 @@ const About: React.FC = () => {
                 </Link>
               </div>
             </div>
+            <div className="pt-4">
+              {" "}
+              <p className="text-sm text-gray-500">
+                KubeKloud: CNCF Hooghly - October 2023
+              </p>
+              <p className="dark:text-white text-xl font-semibold text-gray-900 ">
+                Introduction to Containers and Container Orchestrators
+              </p>
+              <div className="inline-block">
+                <span
+                  className={
+                    "bg-blue-500 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium mt-4 mr-4  "
+                  }
+                >
+                  Containers
+                </span>
+                <span
+                  className={
+                    "bg-purple-500 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium mt-4 mr-4"
+                  }
+                >
+                  Kubernetes
+                </span>
+              </div>
+              <p className="mt-3 text-base dark:text-[#A6A6A6] text-gray-500">
+                Containers and microservices have revolutionized the way
+                applications are deployed on the cloud. Since its launch in
+                2014, Kubernetes has become a de-facto standard as a container
+                orchestration tool. This session would introduce the audience to
+                the world of containers and container orchestrators. We would
+                also discuss the advantages of using Kubernetes as a container
+                orchestrator.
+              </p>
+              <div className="mt-3">
+                <Link
+                  href={
+                    "https://docs.google.com/presentation/d/1ftWWr0uceye1Bg1NmMq2D5a84pX_rMeJ/edit?usp=sharing&ouid=105557108377826887705&rtpof=true&sd=true"
+                  }
+                  target="_blank"
+                  className="text-base font-semibold text-blue-600 hover:text-blue-400"
+                >
+                  Speaker Deck
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
