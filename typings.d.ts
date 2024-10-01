@@ -24,7 +24,6 @@ export type IContactProps = {
 export type IPostItemProps = {
   title: string;
   brief: string;
-  dateAdded: string;
-  dateUpdated: string;
+  publishedAt: string;
   slug: string;
 };

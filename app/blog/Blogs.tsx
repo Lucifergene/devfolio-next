@@ -54,7 +54,7 @@ const Blogs: React.FC = () => {
               ) : (
                 <div className="mt-6 pt-10">
                   {posts.map((post: IPostItemProps) => {
-                    const dateObj = new Date(post.dateAdded);
+                    const dateObj = new Date(post.publishedAt);
                     const date = dateObj.getDate();
                     const month = dateObj.toLocaleString("default", {
                       month: "long",
@@ -63,7 +63,7 @@ const Blogs: React.FC = () => {
                     return (
                       <div key={post.title} className="mb-6">
                         <p className="text-sm text-gray-500">
-                          <time dateTime={post.dateAdded}>{dateAdded}</time>
+                          <time dateTime={post.publishedAt}>{dateAdded}</time>
                         </p>
                         <Link
                           href={"https://www.hashnode.com/post/" + post.slug}

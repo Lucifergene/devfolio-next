@@ -37,7 +37,7 @@ export const Resume: React.FC = () => {
                       </span>
                       <h3 className="text-xl dark:text-white">
                         {" "}
-                        Software Engineer{" "}
+                        Software Engineer II {" "}
                       </h3>
                       <p className="dark:text-[#b7b7b7]">
                         {" "}

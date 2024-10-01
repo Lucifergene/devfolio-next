@@ -36,7 +36,7 @@ const Card = () => {
               {/* <!-- twitter icon and link --> */}
               <a href={TWITTER_URL} target="_blank" rel="noopener noreferrer">
                 <span className="socialbtn text-[#1C9CEA]">
-                  <i className="fa-brands fa-twitter"></i>
+                  <i className="fa-brands fa-x-twitter"></i>
                 </span>
               </a>
               {/* <!-- github icon and link --> */}
