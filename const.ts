@@ -14,4 +14,4 @@ export const SPEAKERDECK_URL = "https://speakerdeck.com/avik6028";
 export const EMAIL_ID = "avikkundu8d@gmail.com";
 
 export const RESUME_URL =
-  "https://drive.google.com/uc?export=download&id=1Zqpm-CoXQFGHCH2c-FE68enrep_p3tTj";
+  "https://drive.google.com/uc?export=download&id=1SJVp_1XqMzcuf4o_dVE6OzY3RM6Q_6Ju";
