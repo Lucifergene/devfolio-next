@@ -1,11 +1,22 @@
 import "../styles/globals.css";
 import Script from "next/script";
-import { Metadata } from "next/types";
+import { Metadata, Viewport } from "next/types";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Card from "./components/Card";
 import { DarkModeToggle } from "./components/DarkModeToggle";
 import { Navbar } from "./components/Navbar";
 import { NavbarMobile } from "./components/NavbarMobile";
 import { NavMobileToggle } from "./components/NavMobileToggle";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#0065E2" },
+    { media: "(prefers-color-scheme: dark)", color: "#45505B" },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Avik Kundu | DevFolio",
@@ -14,7 +25,7 @@ export const metadata: Metadata = {
   applicationName: "Avik's Portfolio Site",
   authors: {
     name: "Avik Kundu",
-    url: "https://www.avikkundu.in/",
+    url: "https://www.avikkundu.com/",
   },
   creator: "Avik Kundu",
   publisher: "Vercel",
@@ -40,15 +51,7 @@ export const metadata: Metadata = {
       "Hey 👋, I'm Avik,  Software Engineer specializing in Full-stack development, Kubernetes and open-source technologies. Explore my portfolio and reach out to me for any discussion.",
     siteName: "Avik's Portfolio Site",
     images: ["https://i.imgur.com/xUqk6VJ.png"],
-    url: "https://www.avikkundu.in/",
-  },
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#0065E2" },
-    { media: "(prefers-color-scheme: dark)", color: "#45505B" },
-  ],
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
+    url: "https://www.avikkundu.com/",
   },
   icons: [
     {
@@ -83,6 +86,11 @@ export default function RootLayout({
           rel="stylesheet"
           href="/assets/fontaswesome/css/fontawesome.min.css"
         />
+        <script
+          src="assets/fontaswesome/js/all.min.js"
+          crossOrigin="anonymous"
+          defer
+        ></script>
         <link rel="preconnect" href="https://fonts.googleapis.com/" />
         <link rel="preconnect" href="https://fonts.gstatic.com/" />
         <link
@@ -135,6 +143,8 @@ export default function RootLayout({
             <div className="col-span-12 lg:col-span-8 lg:top-46 relative">
               <Navbar />
               {children}
+              <Analytics />
+              <SpeedInsights />
             </div>
           </div>
         </div>

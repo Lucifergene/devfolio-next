@@ -44,18 +44,18 @@ const About: React.FC = () => {
             </Link>
             . I'm an open-source enthusiast currently focused on Platform
             Engineering and Cloud-native technologies.
-            <p className="text-gray-700 dark:text-white font-normal text-2xl font-source pt-2">
-              I'm the member of{" "}
-              <Link
-                href="https://aws.amazon.com/"
-                className="text-blue-700 dark:text-blue-400"
-              >
-                AWS Community Builders
-              </Link>{" "}
-              program, where I organize workshops and write about various
-              services offered by AWS.
-            </p>
           </p>
+          {/* <p className="text-gray-700 dark:text-white font-normal text-2xl font-source pt-2">
+            I'm the member of{" "}
+            <Link
+              href="https://aws.amazon.com/"
+              className="text-blue-700 dark:text-blue-400"
+            >
+              AWS Community Builders
+            </Link>{" "}
+            program, where I organize workshops and write about various services
+            offered by AWS.
+          </p> */}
           <p className="text-gray-700 dark:text-white font-normal text-2xl font-source pt-2">
             I like to solve problems, contribute to open source, mentor others,
             and I share what I learn through writing and speaking.

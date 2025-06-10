@@ -965,13 +965,11 @@ video {
   align-items: center;
   border-radius: 35px;
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: #fa5252;
-  --tw-gradient-to: rgb(250 82 82 / 0);
-  --tw-gradient-from: #dd2476;
-  --tw-gradient-to: rgb(221 36 118 / 0);
+  --tw-gradient-from: #06b6d4;
+  --tw-gradient-to: #3b82f6;
+  --tw-gradient-from: #06b6d4;
+  --tw-gradient-to: #3b82f6;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: #dd2476;
-  --tw-gradient-to: #fa5252ef;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 0.75rem;
@@ -2159,8 +2157,10 @@ video {
 }
 
 .bg-profilePic {
-  background-image: url("../images/about/pic-3.webp");
+  background-image: url("../images/about/profile-pic.webp");
   background-size: 100% 100%;
+  border-color: #ffffff;
+  border-width: 10px;
 }
 
 .bg-sigLogo {
@@ -3050,8 +3050,10 @@ video {
 }
 
 .dark .dark\:bg-profilePic-dark {
-  background-image: url("../images/about/pic-9.webp");
+  background-image: url("../images/about/profile-pic.webp");
   background-size: 100% 100%;
+  border-color: #1d1d1d;
+  border-width: 10px;
 }
 
 .dark .dark\:bg-sigLogo-dark {

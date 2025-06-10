@@ -1,11 +1,25 @@
 import { IPostItemProps } from "../../typings";
 
-const query = `
+const variables = { page: 0 };
+
+function transformResponse(response: any): IPostItemProps[] {
+  const posts = response?.data?.publication?.posts?.edges || [];
+
+  return posts.map((post: any) => ({
+    title: post.node.title,
+    brief: post.node.brief,
+    publishedAt: post.node.publishedAt,
+    slug: post.node.slug,
+  }));
+}
+
+export const fetchBlogs = async (count: number) => {
+  const query = `
     query Publication {
-    publication(host: "blog.avikkundu.in") {
+    publication(host: "blog.avikkundu.com") {
         isTeam
         title
-        posts(first: 10) {
+        posts(first: ${count}) {
             edges {
                 node {
                     publishedAt
@@ -16,23 +30,9 @@ const query = `
             }
         }
     }
-}
-`;
+  }
+  `;
 
-const variables = { page: 0 };
-
-function transformResponse(response: any): IPostItemProps[] {
-  const posts = response?.data?.publication?.posts?.edges || [];
-  
-  return posts.map((post: any) => ({
-    title: post.node.title,
-    brief: post.node.brief,
-    publishedAt: post.node.publishedAt,
-    slug: post.node.slug
-  }));
-}
-
-export const fetchBlogs = async () => {
   const data = await fetch("https://gql.hashnode.com/", {
     method: "POST",
     headers: {

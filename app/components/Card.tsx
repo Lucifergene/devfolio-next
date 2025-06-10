@@ -5,7 +5,7 @@ import {
   HASHNODE_URL,
   LINKEDIN_URL,
   RESUME_URL,
-  TWITTER_URL,
+  X_URL,
 } from "../../const";
 
 const Card = () => {
@@ -33,8 +33,8 @@ const Card = () => {
                   <i className="fa-brands fa-linkedin-in"></i>
                 </span>
               </a>
-              {/* <!-- twitter icon and link --> */}
-              <a href={TWITTER_URL} target="_blank" rel="noopener noreferrer">
+              {/* <!-- x icon and link --> */}
+              <a href={X_URL} target="_blank" rel="noopener noreferrer">
                 <span className="socialbtn text-[#1C9CEA]">
                   <i className="fa-brands fa-x-twitter"></i>
                 </span>
@@ -102,14 +102,14 @@ const Card = () => {
                   <p className="text-xs text-[#44566C] dark:text-[#A6A6A6]">
                     Devfolio
                   </p>
-                  <p className="dark:text-white">www.avikkundu.in</p>
+                  <p className="dark:text-white">www.avikkundu.com</p>
                 </div>
               </div>
             </div>
             {/* <!-- personal info end --> */}
 
             {/* <!-- dowanload button --> */}
-            {/* <a href={RESUME_URL}>
+            <a href={RESUME_URL}>
               <button className="dowanload-btn">
                 <img
                   className="mr-3"
@@ -118,7 +118,7 @@ const Card = () => {
                 />
                 Download Resume
               </button>
-            </a> */}
+            </a>
           </div>
         </div>
       </div>

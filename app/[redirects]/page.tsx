@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import {
   DEV_URL,
   FACEBOOK_URL,
@@ -13,7 +13,7 @@ import {
   MEDIUM_URL,
   PORTFOLIO_URL,
   SPEAKERDECK_URL,
-  TWITTER_URL,
+  X_URL,
 } from "../../const";
 import { hideCard } from "../utils";
 import LoaderSVG from "./LoaderSVG";
@@ -25,10 +25,17 @@ interface ParamProps {
 }
 
 const RedirectsPage = ({ params }: ParamProps) => {
-  const [url, setUrl] = useState("");
+  const { redirects } = params;
+  const router = useRouter();
+  const [redirectUrl, setRedirectUrl] = useState("");
+  
   useEffect(() => {
     hideCard("redirect");
-  }, []);
+    
+    if (redirectUrl) {
+      router.push(redirectUrl);
+    }
+  }, [redirectUrl, router]);
 
   const redirectLink = (dir: string) => {
     switch (dir) {
@@ -37,7 +44,9 @@ const RedirectsPage = ({ params }: ParamProps) => {
       case "%40github":
         return GITHUB_URL;
       case "%40twitter":
-        return TWITTER_URL;
+        return X_URL;
+      case "%40x":
+        return X_URL;
       case "%40medium":
         return MEDIUM_URL;
       case "%40dev":
@@ -63,18 +72,28 @@ const RedirectsPage = ({ params }: ParamProps) => {
     <>
       <section id="redirect">
         <div className="bg-white lg:rounded-2xl dark:bg-[#111111] h-[632px]">
-          {redirectLink(params.redirects) !== "NOT_FOUND" ? (
+          {redirectLink(redirects) !== "NOT_FOUND" ? (
             <>
               <div className="text-center">
                 <p className="leading-6 dark:text-white text-lg font-semibold text-gray-700 pt-40">
                   Redirecting to: &nbsp;
-                  <Link href={redirectLink(params.redirects)}>
-                    {redirectLink(params.redirects)}
+                  <Link href={redirectLink(redirects)}>
+                    {redirectLink(redirects)}
                   </Link>
                 </p>
                 <LoaderSVG />
               </div>
-              {setUrl(redirectLink(params.redirects))}
+              <button 
+                className="hidden"
+                onClick={() => setRedirectUrl(redirectLink(redirects))}
+                ref={(button) => {
+                  if (button) {
+                    button.click();
+                  }
+                }}
+              >
+                Redirect
+              </button>
             </>
           ) : (
             <>
@@ -106,8 +125,6 @@ const RedirectsPage = ({ params }: ParamProps) => {
           )}
         </div>
       </section>
-
-      {url && redirect(url)}
     </>
   );
 };

@@ -10,7 +10,7 @@ import {
   MEDIUM_URL,
   PORTFOLIO_URL,
   SPEAKERDECK_URL,
-  TWITTER_URL,
+  X_URL,
 } from "../../const";
 import { hideCard } from "../utils";
 
@@ -77,11 +77,11 @@ const Links: React.FC = () => {
               <div className="items-center space-x-2">
                 <div className="links links_fourth font-semibold text-center">
                   <a
-                    className="links links_fourth"
-                    href={TWITTER_URL}
+                    className="links links_fourth font-bold"
+                    href={X_URL}
                     target="_blank"
                   >
-                    Twitter
+                    𝕏
                   </a>
                 </div>
               </div>
