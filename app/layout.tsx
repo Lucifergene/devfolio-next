@@ -1,11 +1,50 @@
-import "../styles/globals.css";
 import Script from "next/script";
-import { Metadata } from "next/types";
+import { Metadata, Viewport } from "next/types";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Poppins, Roboto_Slab, Source_Sans_3 } from "next/font/google";
 import Card from "./components/Card";
 import { DarkModeToggle } from "./components/DarkModeToggle";
 import { Navbar } from "./components/Navbar";
 import { NavbarMobile } from "./components/NavbarMobile";
 import { NavMobileToggle } from "./components/NavMobileToggle";
+
+// Import CSS files directly
+import "../public/assets/css/tailwind.css";
+import "../public/assets/css/custom.css";
+import "../styles/globals.css";
+
+// Font configuration
+const poppins = Poppins({
+  weight: ["200", "300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+});
+
+const robotoSlab = Roboto_Slab({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto-slab",
+});
+
+const sourceSans3 = Source_Sans_3({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-source-sans-3",
+});
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#0065E2" },
+    { media: "(prefers-color-scheme: dark)", color: "#45505B" },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Avik Kundu | DevFolio",
@@ -14,7 +53,7 @@ export const metadata: Metadata = {
   applicationName: "Avik's Portfolio Site",
   authors: {
     name: "Avik Kundu",
-    url: "https://www.avikkundu.in/",
+    url: "https://www.avikkundu.com/",
   },
   creator: "Avik Kundu",
   publisher: "Vercel",
@@ -40,15 +79,7 @@ export const metadata: Metadata = {
       "Hey 👋, I'm Avik,  Software Engineer specializing in Full-stack development, Kubernetes and open-source technologies. Explore my portfolio and reach out to me for any discussion.",
     siteName: "Avik's Portfolio Site",
     images: ["https://i.imgur.com/xUqk6VJ.png"],
-    url: "https://www.avikkundu.in/",
-  },
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#0065E2" },
-    { media: "(prefers-color-scheme: dark)", color: "#45505B" },
-  ],
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
+    url: "https://www.avikkundu.com/",
   },
   icons: [
     {
@@ -73,26 +104,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${poppins.variable} ${robotoSlab.variable} ${sourceSans3.variable}`}
+    >
       <head>
         <meta charSet="UTF-8" />
 
-        {/* <!--=== fontaswesome ===--> */}
-        <link rel="stylesheet" href="/assets/fontaswesome/css/all.min.css" />
-        <link
-          rel="stylesheet"
-          href="/assets/fontaswesome/css/fontawesome.min.css"
+        {/* FontAwesome - Use Script components for better Next.js compatibility */}
+        <Script
+          src="/assets/fontaswesome/css/all.min.css"
+          strategy="beforeInteractive"
+          id="fa-all"
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com/" />
-        <link rel="preconnect" href="https://fonts.gstatic.com/" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Roboto+Slab:wght@300;400;500;600;700&amp;display=swap"
-          rel="stylesheet"
+        <Script
+          src="/assets/fontaswesome/css/fontawesome.min.css"
+          strategy="beforeInteractive"
+          id="fa-core"
         />
-
-        {/* <!--=== main css ===--> */}
-        <link rel="stylesheet" href="/assets/css/tailwind.css" />
-        <link rel="stylesheet" href="/assets/css/custom.css" />
+        <Script
+          src="/assets/fontaswesome/js/all.min.js"
+          crossOrigin="anonymous"
+          defer
+          strategy="afterInteractive"
+          id="fa-js"
+        />
 
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
         <Script
@@ -110,7 +146,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body>
-        <div className="bg-homeBg dark:bg-homeTwoBg-dark min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full">
+        <div className="bg-homeBg dark:bg-homeTwoBg-dark min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full font-poppins">
           <div className="section-bg">
             <div className="w-full flex justify-between px-4">
               {/* <!-- website Logo --> */}
@@ -135,6 +171,8 @@ export default function RootLayout({
             <div className="col-span-12 lg:col-span-8 lg:top-46 relative">
               <Navbar />
               {children}
+              <Analytics />
+              <SpeedInsights />
             </div>
           </div>
         </div>

@@ -1,9 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&amp;family=Roboto+Slab:wght@300;400;500;600;700;800;900&amp;display=swap");
+/* Font families are now managed through Next.js Font system */
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 
-html {
-  font-family: "Poppins", sans-serif;
-}
+/* Note: Do not add font-family declarations here as they'll conflict with Next.js font system */
 
 /* modal */
 .modal {

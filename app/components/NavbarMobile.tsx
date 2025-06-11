@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
@@ -8,8 +8,8 @@ import { hideCard } from "../utils";
 export const NavbarMobile = () => {
   const pathname = usePathname();
 
-  const handleClose = (section: string) => {
-    hideCard(section);
+  const handleClose = () => {
+    hideCard();
 
     const menuToggleCloseIcon = document.getElementById(
       "menu-toggle-close-icon"
@@ -38,7 +38,7 @@ export const NavbarMobile = () => {
               )}
               href="/"
               onClick={() => {
-                handleClose("");
+                handleClose();
               }}
             >
               <span className="mr-2 text-xl">
@@ -56,7 +56,7 @@ export const NavbarMobile = () => {
               )}
               href="/resume"
               onClick={() => {
-                handleClose("resume");
+                handleClose();
               }}
             >
               <span className="mr-2 text-xl">
@@ -89,7 +89,7 @@ export const NavbarMobile = () => {
               )}
               href="/blog"
               onClick={() => {
-                handleClose("blogs");
+                handleClose();
               }}
             >
               <span className="mr-2 text-xl">
@@ -107,7 +107,7 @@ export const NavbarMobile = () => {
               )}
               href="/research"
               onClick={() => {
-                handleClose("research");
+                handleClose();
               }}
             >
               <span className="mr-2 text-xl">
@@ -125,7 +125,7 @@ export const NavbarMobile = () => {
               )}
               href="/contact"
               onClick={() => {
-                handleClose("contact");
+                handleClose();
               }}
             >
               <span className="mr-2 text-xl">
@@ -143,7 +143,7 @@ export const NavbarMobile = () => {
               )}
               href="/links"
               onClick={() => {
-                handleClose("links");
+                handleClose();
               }}
             >
               <span className="mr-2 text-xl">

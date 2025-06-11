@@ -12,15 +12,24 @@ export const NUMBER_OF_BLOGS = 5;
 
 const Blogs: React.FC = () => {
   const [posts, setPosts] = React.useState<IPostItemProps[]>([]);
+  const [isLoading, setIsLoading] = React.useState(true);
+
   useEffect(() => {
     (async () => {
-      const allPosts: IPostItemProps[] = await fetchBlogs();
-      setPosts(allPosts.slice(0, NUMBER_OF_BLOGS));
+      try {
+        setIsLoading(true);
+        const allPosts: IPostItemProps[] = await fetchBlogs(NUMBER_OF_BLOGS);
+        setPosts(allPosts.slice(0, NUMBER_OF_BLOGS));
+      } catch (error) {
+        console.error("Error fetching blog posts:", error);
+      } finally {
+        setIsLoading(false);
+      }
     })();
   }, []);
 
   useEffect(() => {
-    hideCard("blogs");
+    hideCard();
   }, []);
 
   return (
@@ -49,12 +58,12 @@ const Blogs: React.FC = () => {
                   </Link>
                 </p>
               </div>
-              {posts.length === 0 ? (
+              {isLoading ? (
                 <BlogSkeleton />
               ) : (
                 <div className="mt-6 pt-10">
                   {posts.map((post: IPostItemProps) => {
-                    const dateObj = new Date(post.dateAdded);
+                    const dateObj = new Date(post.publishedAt);
                     const date = dateObj.getDate();
                     const month = dateObj.toLocaleString("default", {
                       month: "long",
@@ -63,7 +72,7 @@ const Blogs: React.FC = () => {
                     return (
                       <div key={post.title} className="mb-6">
                         <p className="text-sm text-gray-500">
-                          <time dateTime={post.dateAdded}>{dateAdded}</time>
+                          <time dateTime={post.publishedAt}>{dateAdded}</time>
                         </p>
                         <Link
                           href={"https://www.hashnode.com/post/" + post.slug}
@@ -80,7 +89,7 @@ const Blogs: React.FC = () => {
                         <div className="mt-3">
                           <Link
                             href={"https://www.hashnode.com/post/" + post.slug}
-                            className="text-base font-semibold text-blue-600 hover:text-blue-400"
+                            className="text-base font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-500"
                             target={"_blank"}
                           >
                             Read article

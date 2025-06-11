@@ -965,13 +965,11 @@ video {
   align-items: center;
   border-radius: 35px;
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: #fa5252;
-  --tw-gradient-to: rgb(250 82 82 / 0);
-  --tw-gradient-from: #dd2476;
-  --tw-gradient-to: rgb(221 36 118 / 0);
+  --tw-gradient-from: #06b6d4;
+  --tw-gradient-to: #3b82f6;
+  --tw-gradient-from: #06b6d4;
+  --tw-gradient-to: #3b82f6;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: #dd2476;
-  --tw-gradient-to: #fa5252ef;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 0.75rem;
@@ -1013,6 +1011,13 @@ video {
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .menu-toggle-btn {
+  --tw-bg-opacity: 1;
+  background-color: rgb(33 36 37 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .menu-toggle-btn:hover {
@@ -2159,8 +2164,10 @@ video {
 }
 
 .bg-profilePic {
-  background-image: url("../images/about/pic-3.webp");
+  background-image: url("../images/about/profile-pic.webp");
   background-size: 100% 100%;
+  border-color: #ffffff;
+  border-width: 10px;
 }
 
 .bg-sigLogo {
@@ -2176,9 +2183,9 @@ video {
   background-image: url("../images/icons/closelight.webp");
 }
 
-.bg-previewBg {
+/* .bg-previewBg {
   background-image: url("../images/background/previewbg.webp");
-}
+} */
 
 .from-\[\#FA5252\] {
   --tw-gradient-from: #fa5252;
@@ -3050,8 +3057,10 @@ video {
 }
 
 .dark .dark\:bg-profilePic-dark {
-  background-image: url("../images/about/pic-9.webp");
+  background-image: url("../images/about/profile-pic.webp");
   background-size: 100% 100%;
+  border-color: #1d1d1d;
+  border-width: 10px;
 }
 
 .dark .dark\:bg-sigLogo-dark {
@@ -3059,9 +3068,9 @@ video {
   background-size: 100% 100%;
 }
 
-.dark .dark\:bg-homeBg-dark {
+/* .dark .dark\:bg-homeBg-dark {
   background-image: url("../images/background/bg-dark.webp");
-}
+} */
 
 .dark .dark\:bg-close-dark {
   background-image: url("../images/icons/closeDark.webp");

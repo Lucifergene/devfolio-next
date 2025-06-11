@@ -27,7 +27,7 @@ export const DarkModeToggle = () => {
     <>
       <button
         type="button"
-        className="dark-light-btn"
+        className="dark-light-btn bg-white dark:bg-blue-500"
         onClick={() => {
           const html = document.querySelector("html");
           if (html?.classList.contains("dark")) {

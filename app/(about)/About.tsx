@@ -20,8 +20,8 @@ const About: React.FC = () => {
         </div>
 
         <div className="pb-12 px-12 lg:px-16 overflow-hidden">
-          <p className="text-gray-700 dark:text-white font-normal text-2xl font-source">
-            Hey, I'm Avik. I work as a Software Engineer specializing in{" "}
+          <p className="text-gray-700 dark:text-white font-normal text-2xl font-source-sans">
+            Hey, I&apos;m Avik. I work as a Software Engineer specializing in{" "}
             <Link
               href="https://www.redhat.com/en/technologies/cloud-computing/openshift"
               className="text-blue-700 dark:text-blue-400"
@@ -42,26 +42,26 @@ const About: React.FC = () => {
             >
               Red Hat
             </Link>
-            . I'm an open-source enthusiast currently focused on Platform
+            . I&apos;m an open-source enthusiast currently focused on Platform
             Engineering and Cloud-native technologies.
-            <p className="text-gray-700 dark:text-white font-normal text-2xl font-source pt-2">
-              I'm the member of{" "}
-              <Link
-                href="https://aws.amazon.com/"
-                className="text-blue-700 dark:text-blue-400"
-              >
-                AWS Community Builders
-              </Link>{" "}
-              program, where I organize workshops and write about various
-              services offered by AWS.
-            </p>
           </p>
-          <p className="text-gray-700 dark:text-white font-normal text-2xl font-source pt-2">
+          {/* <p className="text-gray-700 dark:text-white font-normal text-2xl font-source-sans pt-2">
+            I'm the member of{" "}
+            <Link
+              href="https://aws.amazon.com/"
+              className="text-blue-700 dark:text-blue-400"
+            >
+              AWS Community Builders
+            </Link>{" "}
+            program, where I organize workshops and write about various services
+            offered by AWS.
+          </p> */}
+          <p className="text-gray-700 dark:text-white font-normal text-2xl font-source-sans pt-2">
             I like to solve problems, contribute to open source, mentor others,
             and I share what I learn through writing and speaking.
           </p>
 
-          <h3 className="text-4xl text-slate-900 dark:text-white font-semibold pt-8 pb-4">
+          <h3 className="text-2xl text-slate-900 dark:text-white font-semibold pt-8 pb-4 font-poppins">
             Certifications
           </h3>
 
@@ -155,7 +155,7 @@ const About: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-4xl text-slate-900 dark:text-slate-50 font-semibold pt-10">
+            <h3 className="text-2xl text-slate-900 dark:text-slate-50 font-semibold pt-10 pb-3 font-poppins">
               Previous Talks
             </h3>
             <div className="pt-2">

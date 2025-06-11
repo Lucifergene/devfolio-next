@@ -4,7 +4,7 @@ import { hideCard } from "../utils";
 
 export const Resume: React.FC = () => {
   useEffect(() => {
-    hideCard("resume");
+    hideCard();
   }, []);
 
   return (
@@ -23,41 +23,84 @@ export const Resume: React.FC = () => {
               {/* <!-- experience --> */}
               <div>
                 <div className="flex items-center space-x-2 mb-4 px-4 lg:px-0">
-                  <i className="fa-solid text-6xl text-blue-500 fa-briefcase"></i>
-                  <h4 className="text-5xl dark:text-white font-medium">
+                  <i className="fa-solid text-3xl text-blue-500 fa-briefcase"></i>
+                  <h4 className="text-2xl dark:text-white font-medium">
                     {" "}
                     Experience{" "}
                   </h4>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-6 gap-y-6 px-8">
-                  <div className="items-center space-x-2">
-                    <div className="py-4 pl-5 pr-3 space-y-2 rounded-lg bg-[#eef5fa] dark:bg-transparent dark:border-[#212425] dark:border-2">
-                      <span className="text-tiny text-gray-lite dark:text-[#b7b7b7]">
-                        2022-Present
-                      </span>
-                      <h3 className="text-xl dark:text-white">
-                        {" "}
-                        Software Engineer{" "}
-                      </h3>
-                      <p className="dark:text-[#b7b7b7]">
-                        {" "}
-                        Red Hat, Bengaluru, IND{" "}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="items-center space-x-2">
-                    <div className="bg-[#f2f4ff] dark:bg-transparent py-4 pl-5 pr-3 space-y-2 rounded-lg dark:border-[#212425] dark:border-2">
-                      <span className="text-tiny text-gray-lite dark:text-[#b7b7b7]">
-                        2021-2022
-                      </span>
-                      <h3 className="text-xl dark:text-white">
-                        {" "}
-                        DevOps Engineer Intern{" "}
-                      </h3>
-                      <p className="dark:text-[#b7b7b7]">
-                        {" "}
-                        HighRadius, Hyderabad, IND
-                      </p>
+                <div className="grid grid-cols-1 gap-x-6 gap-y-6 px-8">
+                  <div className="items-center">
+                    <div className="bg-[#fff4f4] dark:bg-transparent py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg dark:border-[#212425] dark:border-2">
+                      {/* Vertical Timeline #1 */}
+                      <div className="-my-6">
+                        {/* Item #1 */}
+                        <div className="relative pl-8 sm:pl-32 py-6 group">
+                          {/* Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) */}
+                          <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                            <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-blue-500 bg-blue-100 rounded-full">
+                              Oct, 2024
+                            </time>
+                            <div className="text-xl text-slate-900 dark:text-white">
+                              Software Engineer II
+                            </div>
+                          </div>
+                          {/* Content */}
+                          <div className="text-slate-500">
+                            Red Hat, Bengaluru, IND
+                          </div>
+                        </div>
+
+                        {/* Item #2 */}
+                        <div className="relative pl-8 sm:pl-32 py-6 group">
+                          {/* Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) */}
+                          <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                            <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-blue-500 bg-blue-100 rounded-full">
+                              July, 2022
+                            </time>
+                            <div className="text-xl text-slate-900 dark:text-white">
+                              Software Engineer I
+                            </div>
+                          </div>
+                          {/* Content */}
+                          <div className="text-slate-500">
+                            Red Hat, Bengaluru, IND
+                          </div>
+                        </div>
+                        {/* Item #3 */}
+                        <div className="relative pl-8 sm:pl-32 py-6 group">
+                          {/* Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) */}
+                          <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                            <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-blue-500 bg-blue-100 rounded-full">
+                              Jan, 2022
+                            </time>
+                            <div className="text-xl text-slate-900 dark:text-white">
+                              Software Engineering Intern
+                            </div>
+                          </div>
+                          {/* Content */}
+                          <div className="text-slate-500">
+                            Red Hat, Bengaluru, IND
+                          </div>
+                        </div>
+
+                        {/* Item #4 */}
+                        <div className="relative pl-8 sm:pl-32 py-6 group">
+                          {/* Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) */}
+                          <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                            <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-blue-500 bg-blue-100 rounded-full">
+                              July, 2021
+                            </time>
+                            <div className="text-xl text-slate-900 dark:text-white">
+                              DevOps Trainee
+                            </div>
+                          </div>
+                          {/* Content */}
+                          <div className="text-slate-500">
+                            HighRadius, Hyderabad, IND
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -67,40 +110,52 @@ export const Resume: React.FC = () => {
               {/* <!-- education - --> */}
               <div>
                 <div className="flex items-center space-x-2 mb-4 mt-8 px-4 lg:px-0">
-                  <i className="fa-solid text-6xl text-blue-500 fa-graduation-cap"></i>
-                  <h4 className="text-5xl dark:text-white font-medium">
+                  <i className="fa-solid text-3xl text-blue-500 fa-graduation-cap"></i>
+                  <h4 className="text-2xl dark:text-white font-medium">
                     {" "}
                     Education{" "}
                   </h4>
                 </div>
-                <div className="px-8">
-                  <div className="bg-[#fff4f4] dark:bg-transparent py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg dark:border-[#212425] dark:border-2">
-                    <span className="text-tiny text-gray-lite dark:text-[#b7b7b7]">
-                      2024-Present
-                    </span>
-                    <h3 className="text-xl dark:text-white">
-                      {" "}
-                      M.Tech in Software Engineering{" "}
-                    </h3>
-                    <p className="dark:text-[#b7b7b7]">
-                      {" "}
-                      BITS Pilani, Pilani, IND{" "}
-                    </p>
-                  </div>
-                </div>
-                <div className="px-8">
-                  <div className="bg-[#fff4f4] dark:bg-transparent py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg dark:border-[#212425] dark:border-2">
-                    <span className="text-tiny text-gray-lite dark:text-[#b7b7b7]">
-                      2018-2022
-                    </span>
-                    <h3 className="text-xl dark:text-white">
-                      {" "}
-                      B.Tech in Computer Engineering{" "}
-                    </h3>
-                    <p className="dark:text-[#b7b7b7]">
-                      {" "}
-                      KIIT University, Bhubaneswar, IND{" "}
-                    </p>
+                <div className="grid grid-cols-1 gap-x-6 gap-y-6 px-8">
+                  <div className="items-center">
+                    <div className="bg-[#fff4f4] dark:bg-transparent py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg dark:border-[#212425] dark:border-2">
+                      {/* Vertical Timeline */}
+                      <div className="-my-6">
+                        {/* Item #1 */}
+                        <div className="relative pl-8 sm:pl-32 py-6 group">
+                          {/* Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) */}
+                          <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                            <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-blue-500 bg-blue-100 rounded-full">
+                              Dec, 2025
+                            </time>
+                            <div className="text-xl  text-slate-900 dark:text-white">
+                              M.Tech in Software Engineering
+                            </div>
+                          </div>
+                          {/* Content */}
+                          <div className="text-slate-500">
+                            BITS Pilani, Pilani, IND
+                          </div>
+                        </div>
+
+                        {/* Item #2 */}
+                        <div className="relative pl-8 sm:pl-32 py-6 group">
+                          {/* Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) */}
+                          <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
+                            <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-blue-500 bg-blue-100 rounded-full">
+                              May, 2022
+                            </time>
+                            <div className="text-xl  text-slate-900 dark:text-white">
+                              B.Tech in Computer Engineering
+                            </div>
+                          </div>
+                          {/* Content */}
+                          <div className="text-slate-500">
+                            KIIT University, Bhubaneswar, IND
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -110,7 +165,7 @@ export const Resume: React.FC = () => {
             <div className="container py-8 px-12 lg:px-16">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="col-span-1">
-                  <h4 className="text-5xl dark:text-white font-medium mb-6">
+                  <h4 className="text-2xl dark:text-white font-medium mb-6">
                     {" "}
                     Working Skills{" "}
                   </h4>
@@ -184,41 +239,52 @@ export const Resume: React.FC = () => {
                 </div>
 
                 <div className="col-span-1">
-                  <h4 className="text-5xl dark:text-white font-medium mb-8">
+                  <h4 className="text-2xl dark:text-white font-medium mb-8">
                     {" "}
                     Technology Stack{" "}
                   </h4>
                   <div className="flex gap-y-5 gap-x-2.5 flex-wrap">
-                    <button className="resume-btn bg-[#FF6464] text-white ">
-                      ReactJS
-                    </button>
-                    <button className="resume-btn bg-[#FF6464] text-white ">
-                      TypeScript
-                    </button>
-                    <button className="resume-btn bg-[#9272d4]  text-white ">
-                      Golang
-                    </button>
-                    <button className="resume-btn bg-[#9272d4]  text-white ">
-                      NodeJS
-                    </button>
-                    <button className="resume-btn bg-[#5185d4]  text-white ">
-                      Kubernetes
-                    </button>
-                    <button className="resume-btn bg-[#5185d4]  text-white ">
-                      CI/CD
-                    </button>
-                    <button className="resume-btn bg-[#5185d4]  text-white ">
-                      O11y
-                    </button>
-                    <button className="resume-btn bg-teal-500  text-white ">
-                      AWS
-                    </button>
-                    <button className="resume-btn bg-teal-500 text-white ">
-                      Azure
-                    </button>
-                    <button className="resume-btn bg-teal-500 text-white ">
-                      Openshift
-                    </button>
+                    <div className="mb-1">
+                      <button className="resume-btn bg-[#FF6464] text-white mr-2">
+                        ReactJS
+                      </button>
+                      <button className="resume-btn bg-[#FF6464] text-white">
+                        TypeScript
+                      </button>
+                    </div>
+
+                    <div className="mb-1">
+                      <button className="resume-btn bg-[#9272d4] text-white mr-2">
+                        Golang
+                      </button>
+                      <button className="resume-btn bg-[#9272d4] text-white">
+                        NodeJS
+                      </button>
+                    </div>
+
+                    <div className="mb-1">
+                      <button className="resume-btn bg-[#5185d4] text-white mr-2">
+                        Kubernetes
+                      </button>
+                      <button className="resume-btn bg-[#5185d4] text-white mr-2">
+                        CI/CD
+                      </button>
+                      <button className="resume-btn bg-[#5185d4] text-white">
+                        O11y
+                      </button>
+                    </div>
+
+                    <div>
+                      <button className="resume-btn bg-teal-500 text-white mr-2">
+                        AWS
+                      </button>
+                      <button className="resume-btn bg-teal-500 text-white mr-2">
+                        Azure
+                      </button>
+                      <button className="resume-btn bg-teal-500 text-white">
+                        Openshift
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -1,11 +1,12 @@
 import React from "react";
+import Image from "next/image";
 import {
   EMAIL_ID,
   GITHUB_URL,
   HASHNODE_URL,
   LINKEDIN_URL,
   RESUME_URL,
-  TWITTER_URL,
+  X_URL,
 } from "../../const";
 
 const Card = () => {
@@ -17,7 +18,7 @@ const Card = () => {
       >
         <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
           {/* <!-- profile image --> */}
-          <div className="bg-profilePic dark:bg-profilePic-dark w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px] "></div>
+          <div className="bg-profilePic dark:bg-profilePic-dark w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px]"></div>
 
           <div className="pt-[100px] pb-8">
             <h1 className="mt-6 mb-1 text-[26px] font-semibold dark:text-white">
@@ -33,10 +34,10 @@ const Card = () => {
                   <i className="fa-brands fa-linkedin-in"></i>
                 </span>
               </a>
-              {/* <!-- twitter icon and link --> */}
-              <a href={TWITTER_URL} target="_blank" rel="noopener noreferrer">
+              {/* <!-- x icon and link --> */}
+              <a href={X_URL} target="_blank" rel="noopener noreferrer">
                 <span className="socialbtn text-[#1C9CEA]">
-                  <i className="fa-brands fa-twitter"></i>
+                  <i className="fa-brands fa-x-twitter"></i>
                 </span>
               </a>
               {/* <!-- github icon and link --> */}
@@ -102,23 +103,25 @@ const Card = () => {
                   <p className="text-xs text-[#44566C] dark:text-[#A6A6A6]">
                     Devfolio
                   </p>
-                  <p className="dark:text-white">www.avikkundu.in</p>
+                  <p className="dark:text-white">www.avikkundu.com</p>
                 </div>
               </div>
             </div>
             {/* <!-- personal info end --> */}
 
             {/* <!-- dowanload button --> */}
-            {/* <a href={RESUME_URL}>
+            <a href={RESUME_URL}>
               <button className="dowanload-btn">
-                <img
+                <Image
                   className="mr-3"
-                  src="./assets/images/icons/dowanload.webp"
-                  alt="icon"
+                  src="/assets/images/icons/dowanload.webp"
+                  alt="Download icon"
+                  width={18}
+                  height={18}
                 />
                 Download Resume
               </button>
-            </a> */}
+            </a>
           </div>
         </div>
       </div>

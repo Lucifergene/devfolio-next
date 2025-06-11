@@ -10,7 +10,7 @@ import { hideCard } from "../utils";
 
 export const Research: React.FC = () => {
   useEffect(() => {
-    hideCard("research");
+    hideCard();
   }, []);
   return (
     <>
