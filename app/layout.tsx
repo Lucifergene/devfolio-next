@@ -168,7 +168,7 @@ export default function RootLayout({
           <div className="container grid grid-cols-12 md:gap-10 justify-between lg:mt-[220px]">
             <Card />
 
-            <div className="col-span-12 lg:col-span-8 lg:top-46 relative lg:w-[88%]">
+            <div className="col-span-12 lg:col-span-8 lg:top-46 relative">
               <Navbar />
               {children}
               <Analytics />
