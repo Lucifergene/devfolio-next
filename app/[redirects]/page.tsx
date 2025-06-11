@@ -1,131 +1,15 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import {
-  DEV_URL,
-  FACEBOOK_URL,
-  GITHUB_URL,
-  HACKERRANK_URL,
-  HASHNODE_URL,
-  INSTAGRAM_URL,
-  LINKEDIN_URL,
-  MEDIUM_URL,
-  PORTFOLIO_URL,
-  SPEAKERDECK_URL,
-  X_URL,
-} from "../../const";
-import { hideCard } from "../utils";
-import LoaderSVG from "./LoaderSVG";
+import ClientRedirects from "./ClientRedirects";
 
-interface ParamProps {
-  params: {
+interface RedirectsPageProps {
+  params: Promise<{
     redirects: string;
-  };
+  }>;
 }
 
-const RedirectsPage = ({ params }: ParamProps) => {
-  const { redirects } = params;
-  const router = useRouter();
-  const [redirectUrl, setRedirectUrl] = useState("");
+const RedirectsPage = async ({ params }: RedirectsPageProps) => {
+  const { redirects } = await params;
 
-  useEffect(() => {
-    hideCard();
-
-    if (redirectUrl) {
-      router.push(redirectUrl);
-    }
-  }, [redirectUrl, router]);
-
-  const redirectLink = (dir: string) => {
-    switch (dir) {
-      case "%40linkedin":
-        return LINKEDIN_URL;
-      case "%40github":
-        return GITHUB_URL;
-      case "%40twitter":
-        return X_URL;
-      case "%40x":
-        return X_URL;
-      case "%40medium":
-        return MEDIUM_URL;
-      case "%40dev":
-        return DEV_URL;
-      case "%40portfolio":
-        return PORTFOLIO_URL;
-      case "%40instagram":
-        return INSTAGRAM_URL;
-      case "%40facebook":
-        return FACEBOOK_URL;
-      case "%40speakerdeck":
-        return SPEAKERDECK_URL;
-      case "%40hackerrank":
-        return HACKERRANK_URL;
-      case "%40hashnode":
-        return HASHNODE_URL;
-      default:
-        return "NOT_FOUND";
-    }
-  };
-
-  return (
-    <>
-      <section id="redirect">
-        <div className="bg-white lg:rounded-2xl dark:bg-[#111111] h-[632px]">
-          {redirectLink(redirects) !== "NOT_FOUND" ? (
-            <>
-              <div className="text-center">
-                <p className="leading-6 dark:text-white text-lg font-semibold text-gray-700 pt-40">
-                  Redirecting to: &nbsp;
-                  <Link href={redirectLink(redirects)}>
-                    {redirectLink(redirects)}
-                  </Link>
-                </p>
-                <LoaderSVG />
-              </div>
-              <button
-                className="hidden"
-                onClick={() => setRedirectUrl(redirectLink(redirects))}
-                ref={(button) => {
-                  if (button) {
-                    button.click();
-                  }
-                }}
-              >
-                Redirect
-              </button>
-            </>
-          ) : (
-            <>
-              {" "}
-              <div className="text-center h-[40vh] flex flex-col items-center justify-center dark:text-white">
-                <div>
-                  <h1 className="next-error-h1 inline-block mr-[20px] pr-[24px] font-medium align-top leading-[49px] text-2xl dark:border-white border-black border-r-2">
-                    404
-                  </h1>
-                  <div className="inline-block text-left">
-                    <h2 className="text-base font-normal leading-[49px] m-0">
-                      This alias does not exist.
-                      <br />
-                    </h2>
-                  </div>
-                  <p className="mt-4">
-                    Click{" "}
-                    <Link
-                      href={"/links"}
-                      className="text-blue-800 dark:text-blue-500"
-                    >
-                      here
-                    </Link>{" "}
-                    to view all my social links.
-                  </p>
-                </div>
-              </div>
-            </>
-          )}
-        </div>
-      </section>
-    </>
-  );
+  return <ClientRedirects redirects={redirects} />;
 };
+
 export default RedirectsPage;
