@@ -1,11 +1,11 @@
-import { IPostItemProps } from "../../typings";
+import { HashnodePost, HashnodeResponse, IPostItemProps } from "../../typings";
 
 const variables = { page: 0 };
 
-function transformResponse(response: any): IPostItemProps[] {
+function transformResponse(response: HashnodeResponse): IPostItemProps[] {
   const posts = response?.data?.publication?.posts?.edges || [];
 
-  return posts.map((post: any) => ({
+  return posts.map((post: HashnodePost) => ({
     title: post.node.title,
     brief: post.node.brief,
     publishedAt: post.node.publishedAt,

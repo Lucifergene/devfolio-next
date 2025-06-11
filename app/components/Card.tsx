@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
   EMAIL_ID,
   GITHUB_URL,
@@ -15,9 +16,9 @@ const Card = () => {
         id="card"
         className="col-span-12 lg:col-span-4 lg:block lg:sticky lg:h-screen top-44"
       >
-        <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
+        <div className="mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0 w-[90%]">
           {/* <!-- profile image --> */}
-          <div className="bg-profilePic dark:bg-profilePic-dark w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px] "></div>
+          <div className="bg-profilePic dark:bg-profilePic-dark w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px]"></div>
 
           <div className="pt-[100px] pb-8">
             <h1 className="mt-6 mb-1 text-[26px] font-semibold dark:text-white">
@@ -111,10 +112,12 @@ const Card = () => {
             {/* <!-- dowanload button --> */}
             <a href={RESUME_URL}>
               <button className="dowanload-btn">
-                <img
+                <Image
                   className="mr-3"
-                  src="./assets/images/icons/dowanload.webp"
-                  alt="icon"
+                  src="/assets/images/icons/dowanload.webp"
+                  alt="Download icon"
+                  width={18}
+                  height={18}
                 />
                 Download Resume
               </button>

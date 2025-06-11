@@ -1,9 +1,6 @@
-export const hideCard = (section: string) => {
+export const hideCard = () => {
   if (typeof window !== "undefined") {
     document.getElementById("card")?.classList.add("hidden");
-    // document.getElementById("children")?.classList.remove("mt-60");
-    // const sectionElement = document.getElementById(section) as HTMLDivElement;
-    // sectionElement.scrollIntoView({ behavior: "smooth" });
   }
 };
 

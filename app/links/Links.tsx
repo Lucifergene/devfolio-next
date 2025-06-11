@@ -18,7 +18,7 @@ import "./Links.css";
 
 const Links: React.FC = () => {
   useEffect(() => {
-    hideCard("links");
+    hideCard();
   }, []);
   return (
     <>

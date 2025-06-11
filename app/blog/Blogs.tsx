@@ -29,7 +29,7 @@ const Blogs: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    hideCard("blogs");
+    hideCard();
   }, []);
 
   return (

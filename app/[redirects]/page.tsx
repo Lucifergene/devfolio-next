@@ -28,10 +28,10 @@ const RedirectsPage = ({ params }: ParamProps) => {
   const { redirects } = params;
   const router = useRouter();
   const [redirectUrl, setRedirectUrl] = useState("");
-  
+
   useEffect(() => {
-    hideCard("redirect");
-    
+    hideCard();
+
     if (redirectUrl) {
       router.push(redirectUrl);
     }
@@ -83,7 +83,7 @@ const RedirectsPage = ({ params }: ParamProps) => {
                 </p>
                 <LoaderSVG />
               </div>
-              <button 
+              <button
                 className="hidden"
                 onClick={() => setRedirectUrl(redirectLink(redirects))}
                 ref={(button) => {

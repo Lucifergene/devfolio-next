@@ -4,7 +4,7 @@ import { hideCard } from "../utils";
 
 export const Resume: React.FC = () => {
   useEffect(() => {
-    hideCard("resume");
+    hideCard();
   }, []);
 
   return (
@@ -23,8 +23,8 @@ export const Resume: React.FC = () => {
               {/* <!-- experience --> */}
               <div>
                 <div className="flex items-center space-x-2 mb-4 px-4 lg:px-0">
-                  <i className="fa-solid text-6xl text-blue-500 fa-briefcase"></i>
-                  <h4 className="text-5xl dark:text-white font-medium">
+                  <i className="fa-solid text-3xl text-blue-500 fa-briefcase"></i>
+                  <h4 className="text-2xl dark:text-white font-medium">
                     {" "}
                     Experience{" "}
                   </h4>
@@ -110,8 +110,8 @@ export const Resume: React.FC = () => {
               {/* <!-- education - --> */}
               <div>
                 <div className="flex items-center space-x-2 mb-4 mt-8 px-4 lg:px-0">
-                  <i className="fa-solid text-6xl text-blue-500 fa-graduation-cap"></i>
-                  <h4 className="text-5xl dark:text-white font-medium">
+                  <i className="fa-solid text-3xl text-blue-500 fa-graduation-cap"></i>
+                  <h4 className="text-2xl dark:text-white font-medium">
                     {" "}
                     Education{" "}
                   </h4>
@@ -165,7 +165,7 @@ export const Resume: React.FC = () => {
             <div className="container py-8 px-12 lg:px-16">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="col-span-1">
-                  <h4 className="text-5xl dark:text-white font-medium mb-6">
+                  <h4 className="text-2xl dark:text-white font-medium mb-6">
                     {" "}
                     Working Skills{" "}
                   </h4>
@@ -239,41 +239,52 @@ export const Resume: React.FC = () => {
                 </div>
 
                 <div className="col-span-1">
-                  <h4 className="text-5xl dark:text-white font-medium mb-8">
+                  <h4 className="text-2xl dark:text-white font-medium mb-8">
                     {" "}
                     Technology Stack{" "}
                   </h4>
                   <div className="flex gap-y-5 gap-x-2.5 flex-wrap">
-                    <button className="resume-btn bg-[#FF6464] text-white ">
-                      ReactJS
-                    </button>
-                    <button className="resume-btn bg-[#FF6464] text-white ">
-                      TypeScript
-                    </button>
-                    <button className="resume-btn bg-[#9272d4]  text-white ">
-                      Golang
-                    </button>
-                    <button className="resume-btn bg-[#9272d4]  text-white ">
-                      NodeJS
-                    </button>
-                    <button className="resume-btn bg-[#5185d4]  text-white ">
-                      Kubernetes
-                    </button>
-                    <button className="resume-btn bg-[#5185d4]  text-white ">
-                      CI/CD
-                    </button>
-                    <button className="resume-btn bg-[#5185d4]  text-white ">
-                      O11y
-                    </button>
-                    <button className="resume-btn bg-teal-500  text-white ">
-                      AWS
-                    </button>
-                    <button className="resume-btn bg-teal-500 text-white ">
-                      Azure
-                    </button>
-                    <button className="resume-btn bg-teal-500 text-white ">
-                      Openshift
-                    </button>
+                    <div className="mb-1">
+                      <button className="resume-btn bg-[#FF6464] text-white mr-2">
+                        ReactJS
+                      </button>
+                      <button className="resume-btn bg-[#FF6464] text-white">
+                        TypeScript
+                      </button>
+                    </div>
+
+                    <div className="mb-1">
+                      <button className="resume-btn bg-[#9272d4] text-white mr-2">
+                        Golang
+                      </button>
+                      <button className="resume-btn bg-[#9272d4] text-white">
+                        NodeJS
+                      </button>
+                    </div>
+
+                    <div className="mb-1">
+                      <button className="resume-btn bg-[#5185d4] text-white mr-2">
+                        Kubernetes
+                      </button>
+                      <button className="resume-btn bg-[#5185d4] text-white mr-2">
+                        CI/CD
+                      </button>
+                      <button className="resume-btn bg-[#5185d4] text-white">
+                        O11y
+                      </button>
+                    </div>
+
+                    <div>
+                      <button className="resume-btn bg-teal-500 text-white mr-2">
+                        AWS
+                      </button>
+                      <button className="resume-btn bg-teal-500 text-white mr-2">
+                        Azure
+                      </button>
+                      <button className="resume-btn bg-teal-500 text-white">
+                        Openshift
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

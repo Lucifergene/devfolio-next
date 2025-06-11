@@ -14,7 +14,7 @@ const initialValues: IContactProps = {
   message: "",
 };
 
-const validate: any = object({
+const validate = object({
   name: string().required("Name is required"),
   email: string().email("Invalid email").required("Email is required"),
   subject: string().required("Subject is required"),
@@ -27,12 +27,15 @@ export const Contact: React.FC = () => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    hideCard("contact");
+    hideCard();
   }, []);
 
   const formSubmit = (
     values: IContactProps,
-    { setSubmitting, resetForm }: any
+    {
+      setSubmitting,
+      resetForm,
+    }: { setSubmitting: (isSubmitting: boolean) => void; resetForm: () => void }
   ) => {
     setSubmitting(true);
     console.log(values);

@@ -1,6 +1,14 @@
 import React from "react";
+import Image from "next/image";
+import { ProjectProps } from "../../typings";
 
-export const Tile = (props: any) => {
+interface TileProps {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  project: ProjectProps;
+}
+
+export const Tile = (props: TileProps) => {
   const { open, setOpen, project } = props;
   return (
     <>
@@ -8,10 +16,14 @@ export const Tile = (props: any) => {
         <div className="rounded-lg bg-[#fff0f0] p-6 dark:bg-transparent dark:border-[2px] border-[#212425]">
           <div className="overflow-hidden rounded-lg">
             <div onClick={() => setOpen(!open)}>
-              <img
+              <Image
                 className="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-auto"
                 src={project.imageUrl}
-                alt="portfolio image"
+                alt={`${project.title} portfolio image`}
+                width={600}
+                height={400}
+                style={{ objectFit: "cover" }}
+                priority
               />
             </div>
           </div>

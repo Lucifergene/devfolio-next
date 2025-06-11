@@ -1,8 +1,23 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Link from "next/link";
+import Image from "next/image";
 
-export const Details = (props: any) => {
+interface Project {
+  title: string;
+  tags: string[];
+  githubURL: string;
+  imageUrl: string;
+  bio: string;
+}
+
+interface DetailsProps {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  project: Project;
+}
+
+export const Details = (props: DetailsProps) => {
   const { open, setOpen, project } = props;
   return (
     <>
@@ -55,8 +70,11 @@ export const Details = (props: any) => {
                           Tags :
                         </p>
                         <div className="lg:px-6">
-                          {project.tags.map((tag: string) => (
-                            <span className="dark:bg-[#1D1D1D] inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-500 text-white mx-1 my-1">
+                          {project.tags.map((tag: string, index: number) => (
+                            <span
+                              key={index}
+                              className="dark:bg-[#1D1D1D] inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-500 text-white mx-1 my-1"
+                            >
                               {tag}
                             </span>
                           ))}
@@ -74,10 +92,13 @@ export const Details = (props: any) => {
                         </p>
                       </div>
                       <div className="space-y-2">
-                        <img
-                          className="w-full h-auto object-cover rounded-xl "
+                        <Image
+                          className="w-full h-auto object-cover rounded-xl"
                           src={project.imageUrl}
                           alt="portfolio image"
+                          width={500}
+                          height={300}
+                          priority
                         />
                       </div>
                     </div>
