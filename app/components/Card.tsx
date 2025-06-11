@@ -16,7 +16,7 @@ const Card = () => {
         id="card"
         className="col-span-12 lg:col-span-4 lg:block lg:sticky lg:h-screen top-44"
       >
-        <div className="w-full mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0">
+        <div className="mb-6 lg:mb-0 mx-auto relative bg-white text-center dark:bg-[#111111] px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0 w-[90%]">
           {/* <!-- profile image --> */}
           <div className="bg-profilePic dark:bg-profilePic-dark w-[240px] absolute left-[50%] transform -translate-x-[50%] h-[240px] drop-shadow-xl mx-auto rounded-[20px] -mt-[140px]"></div>
 
