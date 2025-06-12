@@ -15,8 +15,8 @@
 
 .links .links:hover {
   background-color: #fff;
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
+  /* animation: shake 0.5s;
+  animation-iteration-count: infinite; */
 }
 
 @keyframes shake {
@@ -89,6 +89,20 @@
   box-shadow: inset 0 -4px 0 #ffc15e;
   border: 2px solid #ffc15e;
   background-color: #ffc15e;
+}
+
+.links .links_gray {
+  border-bottom: 3px solid #6b7280;
+  box-shadow: inset 0 -4px 0 #6b7280;
+  border: 2px solid #6b7280;
+  background-color: #6b7280;
+  color: white;
+}
+
+.links .links_gray:hover {
+  background-color: #4b5563;
+  border-color: #4b5563;
+  box-shadow: inset 0 -4px 0 #4b5563;
 }
 
 .channels {

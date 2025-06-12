@@ -1,4 +1,4 @@
-import ClientRedirects from "./ClientRedirects";
+import ClientRedirects from './ClientRedirects';
 
 interface RedirectsPageProps {
   params: Promise<{

@@ -3,22 +3,26 @@
 
 @layer base {
   :root {
-    --font-poppins: "Poppins", sans-serif;
-    --font-roboto-slab: "Roboto Slab", serif;
-    --font-source-sans-3: "Source Sans 3", sans-serif;
+    --font-geist: 'Geist', sans-serif;
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-source-sans-3: 'Source Sans 3', sans-serif;
   }
 
   html,
   body {
-    font-family: var(--font-poppins);
+    font-family: var(--font-geist);
+  }
+
+  .font-geist {
+    font-family: var(--font-geist);
+  }
+  .font-montserrat {
+    font-family: var(--font-montserrat);
   }
 
   .font-poppins {
     font-family: var(--font-poppins);
-  }
-
-  .font-roboto-slab {
-    font-family: var(--font-roboto-slab);
   }
 
   .font-source-sans {

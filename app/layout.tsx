@@ -1,100 +1,110 @@
-import Script from "next/script";
-import { Metadata, Viewport } from "next/types";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Poppins, Roboto_Slab, Source_Sans_3 } from "next/font/google";
-import Card from "./components/Card";
-import { DarkModeToggle } from "./components/DarkModeToggle";
-import { Navbar } from "./components/Navbar";
-import { NavbarMobile } from "./components/NavbarMobile";
-import { NavMobileToggle } from "./components/NavMobileToggle";
+import Script from 'next/script';
+import { Metadata, Viewport } from 'next/types';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Geist, Poppins, Source_Sans_3, Montserrat } from 'next/font/google';
+import Card from './components/Card';
+import { DarkModeToggle } from './components/DarkModeToggle';
+import { Navbar } from './components/Navbar';
+import { NavbarMobile } from './components/NavbarMobile';
+import { NavMobileToggle } from './components/NavMobileToggle';
 
 // Import CSS files directly
-import "../public/assets/css/tailwind.css";
-import "../public/assets/css/custom.css";
-import "../styles/globals.css";
+import '../public/assets/css/tailwind.css';
+import '../public/assets/css/custom.css';
+import '../styles/globals.css';
 
 // Font configuration
-const poppins = Poppins({
-  weight: ["200", "300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-poppins",
+
+const geist = Geist({
+  weight: ['200', '300', '400', '500', '600', '700'],
+  style: ['normal'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-geist',
 });
 
-const robotoSlab = Roboto_Slab({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-roboto-slab",
+const montserrat = Montserrat({
+  weight: ['200', '300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
+});
+
+const poppins = Poppins({
+  weight: ['200', '300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
 });
 
 const sourceSans3 = Source_Sans_3({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-source-sans-3",
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-source-sans-3',
 });
 
 export const viewport: Viewport = {
-  width: "device-width",
+  width: 'device-width',
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#0065E2" },
-    { media: "(prefers-color-scheme: dark)", color: "#45505B" },
+    { media: '(prefers-color-scheme: light)', color: '#0065E2' },
+    { media: '(prefers-color-scheme: dark)', color: '#45505B' },
   ],
 };
 
 export const metadata: Metadata = {
-  title: "Avik Kundu | DevFolio",
+  title: 'Avik Kundu | DevFolio',
   description:
     "Hey 👋, I'm Avik,  Software Engineer specializing in Full-stack development, Kubernetes and open-source technologies.",
   applicationName: "Avik's Portfolio Site",
   authors: {
-    name: "Avik Kundu",
-    url: "https://www.avikkundu.com/",
+    name: 'Avik Kundu',
+    url: 'https://www.avikkundu.com/',
   },
-  creator: "Avik Kundu",
-  publisher: "Vercel",
-  generator: "Next.js",
+  creator: 'Avik Kundu',
+  publisher: 'Vercel',
+  generator: 'Next.js',
   keywords: [
-    "Avik Kundu",
-    "portfolio",
-    "software engineer",
-    "Redhat",
-    "Nextjs",
-    "Tailwind",
-    "developer",
-    "Kubernetes",
-    "opensource",
-    "full stack",
-    "ReactJS",
+    'Avik Kundu',
+    'portfolio',
+    'software engineer',
+    'Redhat',
+    'Nextjs',
+    'Tailwind',
+    'developer',
+    'Kubernetes',
+    'opensource',
+    'full stack',
+    'ReactJS',
   ],
-  referrer: "origin",
+  referrer: 'origin',
   openGraph: {
-    type: "website",
-    title: "Avik Kundu | DevFolio",
+    type: 'website',
+    title: 'Avik Kundu | DevFolio',
     description:
       "Hey 👋, I'm Avik,  Software Engineer specializing in Full-stack development, Kubernetes and open-source technologies. Explore my portfolio and reach out to me for any discussion.",
     siteName: "Avik's Portfolio Site",
-    images: ["https://i.imgur.com/xUqk6VJ.png"],
-    url: "https://www.avikkundu.com/",
+    images: ['https://i.imgur.com/xUqk6VJ.png'],
+    url: 'https://www.avikkundu.com/',
   },
   icons: [
     {
-      url: "/favicon.ico",
-      type: "image/x-icon",
+      url: '/favicon.ico',
+      type: 'image/x-icon',
     },
   ],
   twitter: {
-    card: "summary_large_image",
-    title: "Avik Kundu | DevFolio",
-    creator: "@avik6028",
-    site: "@avik6028",
+    card: 'summary_large_image',
+    title: 'Avik Kundu | DevFolio',
+    creator: '@avik6028',
+    site: '@avik6028',
     description:
       "Hey 👋, I'm Avik,  Software Engineer specializing in Full-stack development, Kubernetes and open-source technologies. Explore my portfolio and reach out to me for any discussion.",
-    images: ["https://i.imgur.com/xUqk6VJ.png"],
+    images: ['https://i.imgur.com/xUqk6VJ.png'],
   },
 };
 
@@ -105,37 +115,37 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
-      className={`${poppins.variable} ${robotoSlab.variable} ${sourceSans3.variable}`}
+      lang='en'
+      className={`${montserrat.variable} ${poppins.variable} ${sourceSans3.variable} ${geist.variable}`}
     >
       <head>
-        <meta charSet="UTF-8" />
+        <meta charSet='UTF-8' />
 
         {/* FontAwesome - Use Script components for better Next.js compatibility */}
         <Script
-          src="/assets/fontaswesome/css/all.min.css"
-          strategy="beforeInteractive"
-          id="fa-all"
+          src='/assets/fontaswesome/css/all.min.css'
+          strategy='beforeInteractive'
+          id='fa-all'
         />
         <Script
-          src="/assets/fontaswesome/css/fontawesome.min.css"
-          strategy="beforeInteractive"
-          id="fa-core"
+          src='/assets/fontaswesome/css/fontawesome.min.css'
+          strategy='beforeInteractive'
+          id='fa-core'
         />
         <Script
-          src="/assets/fontaswesome/js/all.min.js"
-          crossOrigin="anonymous"
+          src='/assets/fontaswesome/js/all.min.js'
+          crossOrigin='anonymous'
           defer
-          strategy="afterInteractive"
-          id="fa-js"
+          strategy='afterInteractive'
+          id='fa-js'
         />
 
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-RN06F8M1G9"
-          strategy="afterInteractive"
+          src='https://www.googletagmanager.com/gtag/js?id=G-RN06F8M1G9'
+          strategy='afterInteractive'
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id='google-analytics' strategy='afterInteractive'>
           {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
@@ -146,15 +156,16 @@ export default function RootLayout({
         </Script>
       </head>
       <body>
-        <div className="bg-homeBg dark:bg-homeTwoBg-dark min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full font-poppins">
-          <div className="section-bg">
-            <div className="w-full flex justify-between px-4">
+        <div className='bg-homeBg dark:bg-homeTwoBg-dark min-h-screen w-full bg-cover bg-fixed bg-center bg-no-repeat font-geist md:pb-16'>
+          <div className='section-bg'>
+            <div className='flex w-full justify-between px-4'>
               {/* <!-- website Logo --> */}
-              <div className="flex items-center">
-                <div className="bg-sigLogo dark:bg-sigLogo-dark h-[4rem] lg:h-[6rem] w-48 lg:w-72"></div>
+              <div className='flex items-center'>
+                <div className='bg-sigLogo dark:bg-sigLogo-dark h-[4rem] rounded-lg lg:w-[30rem]'></div>
+                <div className='bg-sigLogo-mobile dark:bg-sigLogo-mobile-dark ml-6 h-[4rem] w-[5rem] rounded-lg md:hidden'></div>
               </div>
 
-              <div className="flex items-center">
+              <div className='flex items-center'>
                 {/* <!-- dark and light mode toggle --> */}
                 <DarkModeToggle />
                 {/* <!-- mobile toggle button --> */}
@@ -165,10 +176,10 @@ export default function RootLayout({
 
           <NavbarMobile />
 
-          <div className="container grid grid-cols-12 md:gap-10 justify-between lg:mt-[220px]">
+          <div className='container grid grid-cols-12 justify-between md:gap-10 lg:mt-[220px]'>
             <Card />
 
-            <div className="col-span-12 lg:col-span-8 lg:top-46 relative">
+            <div className='lg:top-46 relative col-span-12 lg:col-span-8'>
               <Navbar />
               {children}
               <Analytics />

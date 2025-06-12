@@ -1,6 +1,3 @@
-/* Font families are now managed through Next.js Font system */
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
-
 /* Note: Do not add font-family declarations here as they'll conflict with Next.js font system */
 
 /* modal */
@@ -185,7 +182,7 @@ input:-webkit-autofill:focus {
 
 #preloader:before,
 #preloader:after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -215,7 +212,7 @@ input:-webkit-autofill:focus {
 }
 
 .loader_line:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 50%;
@@ -232,7 +229,7 @@ input:-webkit-autofill:focus {
 }
 
 .loader_line:after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;

@@ -1,4 +1,4 @@
-import { HashnodePost, HashnodeResponse, IPostItemProps } from "../../typings";
+import { HashnodePost, HashnodeResponse, IPostItemProps } from '../../typings';
 
 const variables = { page: 0 };
 
@@ -33,10 +33,10 @@ export const fetchBlogs = async (count: number) => {
   }
   `;
 
-  const data = await fetch("https://gql.hashnode.com/", {
-    method: "POST",
+  const data = await fetch('https://gql.hashnode.com/', {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       query,

@@ -1,2 +1,3 @@
+yarn format
 npx lint-staged
 yarn tsc --noEmit
