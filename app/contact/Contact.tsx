@@ -1,30 +1,30 @@
-"use client";
+'use client';
 
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useEffect, useState } from "react";
-import { string, object } from "yup";
-import { Notification } from "./Notification";
-import { IContactProps } from "../../typings";
-import { hideCard } from "../utils";
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useEffect, useState } from 'react';
+import { string, object } from 'yup';
+import { Notification } from './Notification';
+import { IContactProps } from '../../typings';
+import { hideCard } from '../utils';
 
 const initialValues: IContactProps = {
-  name: "",
-  email: "",
-  subject: "",
-  message: "",
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
 };
 
 const validate = object({
-  name: string().required("Name is required"),
-  email: string().email("Invalid email").required("Email is required"),
-  subject: string().required("Subject is required"),
+  name: string().required('Name is required'),
+  email: string().email('Invalid email').required('Email is required'),
+  subject: string().required('Subject is required'),
   message: string()
-    .required("Message is required")
-    .min(20, "Message must be at least 20 characters"),
+    .required('Message is required')
+    .min(20, 'Message must be at least 20 characters'),
 });
 
 export const Contact: React.FC = () => {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     hideCard();
@@ -39,21 +39,21 @@ export const Contact: React.FC = () => {
   ) => {
     setSubmitting(true);
     console.log(values);
-    fetch("https://formsubmit.co/ajax/2b90c706f0ae682a5f6a19a9caf16cc1", {
-      method: "POST",
+    fetch('https://formsubmit.co/ajax/2b90c706f0ae682a5f6a19a9caf16cc1', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(values),
     })
-      .then((res) => {
-        setMessage("success");
+      .then(res => {
+        setMessage('success');
         console.log(res);
         setSubmitting(false);
         resetForm();
       })
-      .catch((err) => {
-        setMessage("error");
+      .catch(err => {
+        setMessage('error');
         console.log(err);
         setSubmitting(false);
       });
@@ -61,25 +61,38 @@ export const Contact: React.FC = () => {
 
   return (
     <>
-      <section id="contact">
-        <div className="bg-white lg:rounded-2xl dark:bg-[#111111]">
-          <div className="container sm:px-5 md:px-10 lg:px-14">
-            <div className="pt-12 px-4 md:px-0">
-              <h2 className="after-effect after:left-64">Contact me</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-6 gap-y-6 mt-[30px]"></div>
+      <section id='contact'>
+        <div
+          className='lg:rounded-2xl'
+          style={{
+            background: 'rgba(255, 255, 255, 0.1)',
+            backdropFilter: 'blur(15px)',
+            WebkitBackdropFilter: 'blur(15px)',
+            border: '1px solid rgba(255, 255, 255, 0.3)',
+            boxShadow:
+              '0 15px 30px rgba(0, 0, 0, 0.30), 0 10px 10px rgba(0, 0, 0, 0.20)',
+            transform: 'translateY(-10px)',
+          }}
+        >
+          <div className='container sm:px-5 md:px-10 lg:px-14'>
+            <div className='px-4 pt-12 md:px-0'>
+              <h2 className='after-effect bg-[linear-gradient(180deg,#555555,#000000)] bg-clip-text font-geist text-[40px] font-semibold text-transparent after:left-64 dark:bg-[linear-gradient(180deg,#ffffff,#adadad)]'>
+                Contact me
+              </h2>
+              <div className='mt-[30px] grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-2 lg:grid-cols-2'></div>
             </div>
           </div>
 
           <div>
-            <div className=" pb-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:pb-24">
-              <div className="relative max-w-xl mx-auto">
-                <div className="text-center">
-                  <p className="mt-4 text-lg leading-6 text-gray-500 dark:text-[#A6A6A6]">
-                    Want to discuss about a project or just want to say hi?{" "}
+            <div className='overflow-hidden px-4 pb-16 sm:px-6 lg:px-8 lg:pb-24'>
+              <div className='relative mx-auto max-w-xl'>
+                <div className='text-center'>
+                  <p className='mt-4 text-lg leading-6 text-[#232933] dark:text-[#A6A6A6]'>
+                    Want to discuss about a project or just want to say hi?{' '}
                     <br /> Feel free to contact me.
                   </p>
                 </div>
-                <div className="mt-12 px-4">
+                <div className='mt-12 px-4'>
                   <Formik
                     initialValues={initialValues}
                     validationSchema={validate}
@@ -88,108 +101,108 @@ export const Contact: React.FC = () => {
                     {({ handleSubmit, isSubmitting, isValidating }) => (
                       <Form
                         onSubmit={handleSubmit}
-                        className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
+                        className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'
                       >
                         <div>
                           <label
-                            htmlFor="name"
-                            className="dark:text-[#A6A6A6] block text-sm font-medium text-gray-700"
+                            htmlFor='name'
+                            className='block text-sm font-medium text-gray-700 dark:text-[#A6A6A6]'
                           >
                             Your Name
                           </label>
-                          <div className="mt-1">
+                          <div className='mt-1'>
                             <Field
-                              as="input"
-                              type="text"
-                              name="name"
-                              id="name"
-                              autoComplete="name"
-                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
+                              as='input'
+                              type='text'
+                              name='name'
+                              id='name'
+                              autoComplete='name'
+                              className='focus:border-grey-500 focus:ring-grey-500 block w-full rounded-md border border-gray-300 py-3 px-4 shadow-sm'
                             />
                             <ErrorMessage
-                              name="name"
-                              component="div"
-                              className="text-red-500 text-sm"
+                              name='name'
+                              component='div'
+                              className='text-center text-sm font-medium text-red-900 dark:text-red-400'
                             />
                           </div>
                         </div>
                         <div>
                           <label
-                            htmlFor="email"
-                            className="dark:text-[#A6A6A6] block text-sm font-medium text-gray-700"
+                            htmlFor='email'
+                            className='block text-sm font-medium text-gray-700 dark:text-[#A6A6A6]'
                           >
                             Email
                           </label>
-                          <div className="mt-1">
+                          <div className='mt-1'>
                             <Field
-                              as="input"
-                              type="email"
-                              name="email"
-                              id="email"
-                              autoComplete="email"
-                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
+                              as='input'
+                              type='email'
+                              name='email'
+                              id='email'
+                              autoComplete='email'
+                              className='focus:border-grey-500 focus:ring-grey-500 block w-full rounded-md border border-gray-300 py-3 px-4 shadow-sm'
                             />
                             <ErrorMessage
-                              name="email"
-                              component="div"
-                              className="text-red-500 text-sm"
+                              name='email'
+                              component='div'
+                              className='text-center text-sm font-medium text-red-900 dark:text-red-400'
                             />
                           </div>
                         </div>
 
-                        <div className="sm:col-span-2">
+                        <div className='sm:col-span-2'>
                           <label
-                            htmlFor="subject"
-                            className="dark:text-[#A6A6A6] block text-sm font-medium text-gray-700"
+                            htmlFor='subject'
+                            className='block text-sm font-medium text-gray-700 dark:text-[#A6A6A6]'
                           >
                             Subject
                           </label>
-                          <div className="mt-1">
+                          <div className='mt-1'>
                             <Field
-                              as="input"
-                              type="text"
-                              name="subject"
-                              id="subject"
-                              autoComplete="organization"
-                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border  border-gray-300 rounded-md"
+                              as='input'
+                              type='text'
+                              name='subject'
+                              id='subject'
+                              autoComplete='organization'
+                              className='focus:border-grey-500 focus:ring-grey-500 block w-full rounded-md border border-gray-300 py-3 px-4 shadow-sm'
                             />
                             <ErrorMessage
-                              name="subject"
-                              component="div"
-                              className="text-red-500 text-sm"
+                              name='subject'
+                              component='div'
+                              className='text-center text-sm font-medium text-red-900 dark:text-red-400'
                             />
                           </div>
                         </div>
 
-                        <div className="sm:col-span-2">
+                        <div className='sm:col-span-2'>
                           <label
-                            htmlFor="message"
-                            className="dark:text-[#A6A6A6] block text-sm font-medium text-gray-700"
+                            htmlFor='message'
+                            className='block text-sm font-medium text-gray-700 dark:text-[#A6A6A6]'
                           >
                             Message
                           </label>
-                          <div className="mt-1">
+                          <div className='mt-1'>
                             <Field
-                              as="textarea"
-                              name="message"
-                              id="message"
+                              as='textarea'
+                              name='message'
+                              id='message'
                               rows={4}
-                              className="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
-                              placeholder="Write your message here"
+                              className='focus:border-grey-500 focus:ring-grey-500 block w-full rounded-md border border-gray-300 py-3 px-4 shadow-sm'
+                              placeholder='Write your message here'
                             />
                             <ErrorMessage
-                              name="message"
-                              component="div"
-                              className="text-red-500 text-sm"
+                              name='message'
+                              component='div'
+                              className='text-center text-sm font-medium text-red-900 dark:text-red-400'
                             />
                           </div>
                         </div>
 
-                        <div className="sm:col-span-2">
+                        <div className='sm:col-span-2'>
                           <button
-                            type="submit"
+                            type='submit'
                             disabled={isSubmitting || isValidating}
-                            className="w-full inline-flex items-center justify-center px-6 py-3 shadow-sm text-base font-medium rounded-md text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500"
+                            className='mt-4 flex w-full items-center justify-center rounded-full bg-[#161616] px-4 py-3 text-sm font-semibold text-white shadow-md transition duration-200 hover:bg-[#444444] dark:bg-[#ededed] dark:text-[#161616] dark:hover:bg-[#eaeaeac2]'
                           >
                             Send Message
                           </button>

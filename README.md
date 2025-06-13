@@ -2,7 +2,11 @@
 
 Portfolio website built using **Next.js** and **Tailwind CSS**.
 
-![Devfolio](https://repository-images.githubusercontent.com/603573201/7b5af0a6-9bb4-4f2d-b433-fcdc9e355d06)
+Design Language: **Glassmorphism**
+
+(Inspired after Apple's new **Liquid Glass** design language announced at WWDC 2025)
+
+![Devfolio](public/og-image.webp)
 
 Deployed on **Vercel**.
 

@@ -8,7 +8,6 @@ export type PostItemProps = {
   href: string;
   category: {
     name: string;
-    color: string;
   };
   description: string;
   authors: AuthorProps[];

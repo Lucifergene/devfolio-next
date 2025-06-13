@@ -1,157 +1,116 @@
-"use client";
-import React from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import classNames from "classnames";
-import { hideCard } from "../utils";
+'use client';
+import React from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import classNames from 'classnames';
+import { hideCard } from '../utils';
+
+// Define navigation item interface
+interface NavItem {
+  path: string;
+  label: string;
+  icon: string;
+  isActive?: boolean;
+}
 
 export const NavbarMobile = () => {
   const pathname = usePathname();
+
+  // Define navigation items
+  const navItems: NavItem[] = [
+    {
+      path: '/',
+      label: 'About',
+      icon: 'fa-regular fa-user',
+    },
+    {
+      path: '/resume',
+      label: 'Resume',
+      icon: 'fa-regular fa-file-lines',
+    },
+    // Commented out for now
+    // {
+    //   path: '/projects',
+    //   label: 'Projects',
+    //   icon: 'fas fa-briefcase',
+    // },
+    {
+      path: '/blog',
+      label: 'Blogs',
+      icon: 'fa-brands fa-blogger',
+    },
+    {
+      path: '/research',
+      label: 'Research',
+      icon: 'fa-solid fa-book',
+    },
+    {
+      path: '/contact',
+      label: 'Contact',
+      icon: 'fa-solid fa-address-book',
+    },
+    {
+      path: '/links',
+      label: 'Links',
+      icon: 'fa-solid fa-up-right-from-square',
+    },
+  ];
 
   const handleClose = () => {
     hideCard();
 
     const menuToggleCloseIcon = document.getElementById(
-      "menu-toggle-close-icon"
+      'menu-toggle-close-icon'
     ) as HTMLButtonElement;
     const menuToggleOpenIcon = document.getElementById(
-      "menu-toggle-open-icon"
+      'menu-toggle-open-icon'
     ) as HTMLButtonElement;
     const navbarMobile = document.getElementById(
-      "navbar-mobile"
+      'navbar-mobile'
     ) as HTMLDivElement;
-    navbarMobile.classList.toggle("hidden");
-    menuToggleCloseIcon.classList.toggle("hidden");
-    menuToggleOpenIcon.classList.toggle("hidden");
+    navbarMobile.classList.toggle('hidden');
+    menuToggleCloseIcon.classList.toggle('hidden');
+    menuToggleOpenIcon.classList.toggle('hidden');
   };
 
   return (
     <>
-      <nav id="navbar-mobile" className="lg:hidden hidden">
-        <ul className="block rounded-b-[20px] shadow-md absolute left-0 top-20 z-[22222222222222] w-full bg-white dark:bg-[#1d1d1d]">
-          <li>
-            <Link
-              className={classNames(
-                pathname === "/"
-                  ? "mobile-menu-items-active"
-                  : "mobile-menu-items"
-              )}
-              href="/"
-              onClick={() => {
-                handleClose();
-              }}
-            >
-              <span className="mr-2 text-xl">
-                <i className="fa-regular fa-user"></i>
-              </span>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={classNames(
-                pathname === "/resume"
-                  ? "mobile-menu-items-active"
-                  : "mobile-menu-items"
-              )}
-              href="/resume"
-              onClick={() => {
-                handleClose();
-              }}
-            >
-              <span className="mr-2 text-xl">
-                <i className="fa-regular fa-file-lines"></i>
-              </span>
-              Resume
-            </Link>
-          </li>
-          {/* <li>
-            <Link
-              className={
-                pathname === "/projects"
-                  ? "mobile-menu-items-active"
-                  : "mobile-menu-items"
-              }
-              href="/projects"
-            >
-              <span className="mr-2 text-xl">
-                <i className="fas fa-briefcase"></i>
-              </span>
-              Projects
-            </Link>
-          </li> */}
-          <li>
-            <Link
-              className={classNames(
-                pathname === "/blog"
-                  ? "mobile-menu-items-active"
-                  : "mobile-menu-items"
-              )}
-              href="/blog"
-              onClick={() => {
-                handleClose();
-              }}
-            >
-              <span className="mr-2 text-xl">
-                <i className="fa-brands fa-blogger"></i>
-              </span>
-              Blogs
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={classNames(
-                pathname === "/research"
-                  ? "mobile-menu-items-active"
-                  : "mobile-menu-items"
-              )}
-              href="/research"
-              onClick={() => {
-                handleClose();
-              }}
-            >
-              <span className="mr-2 text-xl">
-                <i className="fa-solid fa-book"></i>
-              </span>
-              Research
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={classNames(
-                pathname === "/contact"
-                  ? "mobile-menu-items-active"
-                  : "mobile-menu-items"
-              )}
-              href="/contact"
-              onClick={() => {
-                handleClose();
-              }}
-            >
-              <span className="mr-2 text-xl">
-                <i className="fa-solid fa-address-book"></i>
-              </span>
-              Contact
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={classNames(
-                pathname === "/links"
-                  ? "mobile-menu-items-active"
-                  : "mobile-menu-items"
-              )}
-              href="/links"
-              onClick={() => {
-                handleClose();
-              }}
-            >
-              <span className="mr-2 text-xl">
-                <i className="fa-solid fa-up-right-from-square"></i>
-              </span>
-              Links
-            </Link>
-          </li>
+      <nav
+        id='navbar-mobile'
+        className='fixed inset-x-0 bottom-0 top-[5.9rem] z-50 hidden lg:hidden'
+      >
+        <ul
+          className='absolute inset-0 z-[22222222222222] flex h-full w-full flex-col justify-center p-[6.5rem] font-montserrat text-xl shadow-md'
+          style={{
+            background: 'rgba(255, 255, 255, 0.1)',
+            backdropFilter: 'blur(45px)',
+            WebkitBackdropFilter: 'blur(45px)',
+            border: '1px solid rgba(255, 255, 255, 0.3)',
+            boxShadow:
+              '0 10px 20px rgba(0, 0, 0, 0.25), 0 6px 6px rgba(0, 0, 0, 0.15)',
+          }}
+        >
+          {navItems.map(item => (
+            <li key={item.path} className='m-2'>
+              <Link
+                className={classNames(
+                  'inline-flex',
+                  pathname === item.path
+                    ? 'mobile-menu-items-active'
+                    : 'mobile-menu-items'
+                )}
+                href={item.path}
+                onClick={() => {
+                  handleClose();
+                }}
+              >
+                <span className='mr-2 w-8 text-center text-xl'>
+                  <i className={item.icon}></i>
+                </span>
+                <span>{item.label}</span>
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </>

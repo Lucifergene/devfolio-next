@@ -1,295 +1,226 @@
-"use client";
-import React, { useEffect } from "react";
-import { hideCard } from "../utils";
+'use client';
+import React, { useEffect } from 'react';
+import { hideCard } from '../utils';
+
+// Define interfaces for our experience and education items
+interface ExperienceItem {
+  date: string;
+  title: string;
+  company: string;
+  location: string;
+}
+
+interface EducationItem {
+  date: string;
+  degree: string;
+  institution: string;
+  location: string;
+}
 
 export const Resume: React.FC = () => {
   useEffect(() => {
     hideCard();
   }, []);
 
+  // Define work experiences
+  const experiences: ExperienceItem[] = [
+    {
+      date: 'Oct, 2024',
+      title: 'Software Engineer II',
+      company: 'Red Hat',
+      location: 'Bengaluru, IND',
+    },
+    {
+      date: 'July, 2022',
+      title: 'Software Engineer I',
+      company: 'Red Hat',
+      location: 'Bengaluru, IND',
+    },
+    {
+      date: 'Jan, 2022',
+      title: 'Software Engineering Intern',
+      company: 'Red Hat',
+      location: 'Bengaluru, IND',
+    },
+    {
+      date: 'July, 2021',
+      title: 'DevOps Trainee',
+      company: 'HighRadius',
+      location: 'Hyderabad, IND',
+    },
+  ];
+
+  // Define education
+  const education: EducationItem[] = [
+    {
+      date: 'Dec, 2025',
+      degree: 'M.Tech in Software Engineering',
+      institution: 'BITS Pilani',
+      location: 'Pilani, IND',
+    },
+    {
+      date: 'May, 2022',
+      degree: 'B.Tech in Computer Engineering',
+      institution: 'KIIT University',
+      location: 'Bhubaneswar, IND',
+    },
+  ];
+
+  const technologies = [
+    'ReactJS',
+    'TypeScript',
+    'Next.js',
+    'Tailwind CSS',
+    'Golang',
+    'Node.js',
+    'Express.js',
+    'REST APIs',
+    'Kubernetes',
+    'OpenShift',
+    'Kubernetes Operators',
+    'Docker',
+    'Backstage',
+    'MongoDB',
+    'PostgreSQL',
+    'RabbitMQ',
+    'Git',
+    'Jupyter Notebook',
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'RAG',
+    'LangChain',
+    'LlamaStack',
+    'Generative AI',
+  ];
+
   return (
     <>
-      <section id="resume">
-        <div className="bg-white lg:rounded-2xl dark:bg-[#111111]">
-          <div className="container sm:px-5 md:px-10 lg:px-14">
-            <div className="pt-12 px-4 md:px-0">
-              <h2 className="after-effect after:left-44">Resume</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-6 gap-y-6 mt-[30px]"></div>
-            </div>
+      <section
+        id='resume'
+        className='lg:rounded-2xl'
+        style={{
+          background: 'rgba(255, 255, 255, 0.1)',
+          backdropFilter: 'blur(15px)',
+          WebkitBackdropFilter: 'blur(15px)',
+          border: '1px solid rgba(255, 255, 255, 0.3)',
+          boxShadow:
+            '0 15px 30px rgba(0, 0, 0, 0.30), 0 10px 10px rgba(0, 0, 0, 0.20)',
+          transform: 'translateY(-10px)',
+        }}
+      >
+        <div className='container sm:px-5 md:px-10 lg:px-14'>
+          <div className='px-4 pt-12 md:px-0'>
+            <h2 className='after-effect bg-[linear-gradient(180deg,#555555,#000000)] bg-clip-text font-geist text-[40px] font-semibold text-transparent after:left-44 dark:bg-[linear-gradient(180deg,#ffffff,#adadad)]'>
+              Resume
+            </h2>
+            <div className='mt-[30px] grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-2 lg:grid-cols-2'></div>
           </div>
+        </div>
 
-          <div className="pb-12 pt-4 overflow-hidden">
-            <div className="px-4 md:px-12 lg:px-12">
-              {/* <!-- experience --> */}
-              <div>
-                <div className="flex items-center space-x-2 mb-4 px-4 lg:px-0">
-                  <i className="fa-solid text-3xl text-blue-500 fa-briefcase"></i>
-                  <h4 className="text-2xl dark:text-white font-medium">
-                    {" "}
-                    Experience{" "}
-                  </h4>
-                </div>
-                <div className="grid grid-cols-1 gap-x-6 gap-y-6 px-8">
-                  <div className="items-center">
-                    <div className="bg-[#fff4f4] dark:bg-transparent py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg dark:border-[#212425] dark:border-2">
-                      {/* Vertical Timeline #1 */}
-                      <div className="-my-6">
-                        {/* Item #1 */}
-                        <div className="relative pl-8 sm:pl-32 py-6 group">
-                          {/* Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) */}
-                          <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
-                            <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-blue-500 bg-blue-100 rounded-full">
-                              Oct, 2024
-                            </time>
-                            <div className="text-xl text-slate-900 dark:text-white">
-                              Software Engineer II
-                            </div>
-                          </div>
-                          {/* Content */}
-                          <div className="text-slate-500">
-                            Red Hat, Bengaluru, IND
-                          </div>
-                        </div>
-
-                        {/* Item #2 */}
-                        <div className="relative pl-8 sm:pl-32 py-6 group">
-                          {/* Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) */}
-                          <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
-                            <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-blue-500 bg-blue-100 rounded-full">
-                              July, 2022
-                            </time>
-                            <div className="text-xl text-slate-900 dark:text-white">
-                              Software Engineer I
-                            </div>
-                          </div>
-                          {/* Content */}
-                          <div className="text-slate-500">
-                            Red Hat, Bengaluru, IND
-                          </div>
-                        </div>
-                        {/* Item #3 */}
-                        <div className="relative pl-8 sm:pl-32 py-6 group">
-                          {/* Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) */}
-                          <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
-                            <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-blue-500 bg-blue-100 rounded-full">
-                              Jan, 2022
-                            </time>
-                            <div className="text-xl text-slate-900 dark:text-white">
-                              Software Engineering Intern
-                            </div>
-                          </div>
-                          {/* Content */}
-                          <div className="text-slate-500">
-                            Red Hat, Bengaluru, IND
-                          </div>
-                        </div>
-
-                        {/* Item #4 */}
-                        <div className="relative pl-8 sm:pl-32 py-6 group">
-                          {/* Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) */}
-                          <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
-                            <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-blue-500 bg-blue-100 rounded-full">
-                              July, 2021
-                            </time>
-                            <div className="text-xl text-slate-900 dark:text-white">
-                              DevOps Trainee
-                            </div>
-                          </div>
-                          {/* Content */}
-                          <div className="text-slate-500">
-                            HighRadius, Hyderabad, IND
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        <div className='overflow-hidden pb-12 pt-4'>
+          <div className='px-4 md:px-12 lg:px-12'>
+            {/* Experience Section */}
+            <div>
+              <div className='mb-4 flex items-center space-x-2 px-4 lg:px-0'>
+                <i className='fa-solid fa-briefcase text-3xl text-gray-700 dark:text-[#EDEDED]'></i>
+                <h4 className='text-2xl font-medium dark:text-[#EDEDED]'>
+                  Experience
+                </h4>
               </div>
-              {/* <!-- experience --> */}
-
-              {/* <!-- education - --> */}
-              <div>
-                <div className="flex items-center space-x-2 mb-4 mt-8 px-4 lg:px-0">
-                  <i className="fa-solid text-3xl text-blue-500 fa-graduation-cap"></i>
-                  <h4 className="text-2xl dark:text-white font-medium">
-                    {" "}
-                    Education{" "}
-                  </h4>
-                </div>
-                <div className="grid grid-cols-1 gap-x-6 gap-y-6 px-8">
-                  <div className="items-center">
-                    <div className="bg-[#fff4f4] dark:bg-transparent py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg dark:border-[#212425] dark:border-2">
-                      {/* Vertical Timeline */}
-                      <div className="-my-6">
-                        {/* Item #1 */}
-                        <div className="relative pl-8 sm:pl-32 py-6 group">
+              <div className='grid grid-cols-1 gap-x-6 gap-y-6 px-8'>
+                <div className='items-center'>
+                  <div className='mb-6 space-y-2 rounded-lg py-4 pl-5 pr-3'>
+                    {/* Vertical Timeline #1 */}
+                    <div className='-my-6'>
+                      {experiences.map((experience, index) => (
+                        <div
+                          key={index}
+                          className='group relative py-6 pl-8 sm:pl-32'
+                        >
                           {/* Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) */}
-                          <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
-                            <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-blue-500 bg-blue-100 rounded-full">
-                              Dec, 2025
+                          <div className='mb-1 flex flex-col items-start before:absolute before:left-2 before:h-full before:-translate-x-1/2 before:translate-y-3 before:self-start before:bg-slate-300 before:px-px after:absolute after:left-2 after:box-content after:h-2 after:w-2 after:-translate-x-1/2 after:translate-y-1.5 after:rounded-full after:border-4 after:border-slate-50 after:bg-slate-700 group-last:before:hidden sm:flex-row sm:before:left-0 sm:before:ml-[6.5rem] sm:after:left-0 sm:after:ml-[6.5rem]'>
+                            <time className='left-0 mb-3 inline-flex h-6 w-20 translate-y-0.5 items-center justify-center rounded-full bg-blue-100 text-xs font-semibold uppercase text-slate-900 sm:absolute sm:mb-0'>
+                              {experience.date}
                             </time>
-                            <div className="text-xl  text-slate-900 dark:text-white">
-                              M.Tech in Software Engineering
+                            <div className='text-xl text-slate-900 dark:text-[#EDEDED]'>
+                              {experience.title}
                             </div>
                           </div>
                           {/* Content */}
-                          <div className="text-slate-500">
-                            BITS Pilani, Pilani, IND
+                          <div className='text-[#374151] dark:text-[#A6A6A6]'>
+                            {experience.company}, {experience.location}
                           </div>
                         </div>
-
-                        {/* Item #2 */}
-                        <div className="relative pl-8 sm:pl-32 py-6 group">
-                          {/* Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) */}
-                          <div className="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-blue-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5">
-                            <time className="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-blue-500 bg-blue-100 rounded-full">
-                              May, 2022
-                            </time>
-                            <div className="text-xl  text-slate-900 dark:text-white">
-                              B.Tech in Computer Engineering
-                            </div>
-                          </div>
-                          {/* Content */}
-                          <div className="text-slate-500">
-                            KIIT University, Bhubaneswar, IND
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* <!-- education --> */}
-            </div>
-            {/* <!-- working section start --> */}
-            <div className="container py-8 px-12 lg:px-16">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="col-span-1">
-                  <h4 className="text-2xl dark:text-white font-medium mb-6">
-                    {" "}
-                    Working Skills{" "}
-                  </h4>
-                  <div className="mt-9">
-                    <div className="flex justify-between mb-1">
-                      <span className=" font-semibold text-[#526377] dark:text-[#A6A6A6]">
-                        Frontend Development
-                      </span>
-                      <span className=" font-semibold text-[#526377] dark:text-[#A6A6A6">
-                        90%
-                      </span>
-                    </div>
-                    <div className="w-full bg-[#edf2f2] rounded-full h-1 dark:bg-[#1c1c1c]">
-                      <div
-                        className="bg-[#FF6464] h-1 rounded-full"
-                        style={{ width: "90%" }}
-                      ></div>
-                    </div>
-                  </div>
-
-                  <div className="mt-7">
-                    <div className="flex justify-between mb-1">
-                      <span className=" font-semibold text-[#526377] dark:text-[#A6A6A6]">
-                        Backend Development
-                      </span>
-                      <span className=" font-semibold text-[#526377] dark:text-[#A6A6A6">
-                        70%
-                      </span>
-                    </div>
-                    <div className="w-full bg-[#edf2f2] rounded-full h-1 dark:bg-[#1c1c1c]">
-                      <div
-                        className="bg-[#9272d4] h-1 rounded-full"
-                        style={{ width: "70%" }}
-                      ></div>
-                    </div>
-                  </div>
-
-                  <div className="mt-7">
-                    <div className="flex justify-between mb-1">
-                      <span className=" font-semibold text-[#526377] dark:text-[#A6A6A6]">
-                        DevOps Engineering
-                      </span>
-                      <span className=" font-semibold text-[#526377] dark:text-[#A6A6A6">
-                        80%
-                      </span>
-                    </div>
-                    <div className="w-full bg-[#edf2f2] rounded-full h-1 dark:bg-[#1c1c1c]">
-                      <div
-                        className="bg-[#5185d4] h-1 rounded-full"
-                        style={{ width: "80%" }}
-                      ></div>
-                    </div>
-                  </div>
-
-                  <div className="mt-7">
-                    <div className="flex justify-between mb-1">
-                      <span className=" font-semibold text-[#526377] dark:text-[#A6A6A6]">
-                        Cloud Computing
-                      </span>
-                      <span className=" font-semibold text-[#526377] dark:text-[#A6A6A6">
-                        90%
-                      </span>
-                    </div>
-                    <div className="w-full bg-[#edf2f2] rounded-full h-1 dark:bg-[#1c1c1c]">
-                      <div
-                        className="bg-teal-500 h-1 rounded-full"
-                        style={{ width: "90%" }}
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-span-1">
-                  <h4 className="text-2xl dark:text-white font-medium mb-8">
-                    {" "}
-                    Technology Stack{" "}
-                  </h4>
-                  <div className="flex gap-y-5 gap-x-2.5 flex-wrap">
-                    <div className="mb-1">
-                      <button className="resume-btn bg-[#FF6464] text-white mr-2">
-                        ReactJS
-                      </button>
-                      <button className="resume-btn bg-[#FF6464] text-white">
-                        TypeScript
-                      </button>
-                    </div>
-
-                    <div className="mb-1">
-                      <button className="resume-btn bg-[#9272d4] text-white mr-2">
-                        Golang
-                      </button>
-                      <button className="resume-btn bg-[#9272d4] text-white">
-                        NodeJS
-                      </button>
-                    </div>
-
-                    <div className="mb-1">
-                      <button className="resume-btn bg-[#5185d4] text-white mr-2">
-                        Kubernetes
-                      </button>
-                      <button className="resume-btn bg-[#5185d4] text-white mr-2">
-                        CI/CD
-                      </button>
-                      <button className="resume-btn bg-[#5185d4] text-white">
-                        O11y
-                      </button>
-                    </div>
-
-                    <div>
-                      <button className="resume-btn bg-teal-500 text-white mr-2">
-                        AWS
-                      </button>
-                      <button className="resume-btn bg-teal-500 text-white mr-2">
-                        Azure
-                      </button>
-                      <button className="resume-btn bg-teal-500 text-white">
-                        Openshift
-                      </button>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            {/* <!-- working section end --> */}
+
+            {/* Education Section */}
+            <div>
+              <div className='mb-4 mt-8 flex items-center space-x-2 px-4 lg:px-0'>
+                <i className='fa-solid fa-graduation-cap text-3xl text-gray-700 dark:text-[#EDEDED]'></i>
+                <h4 className='text-2xl font-medium dark:text-[#EDEDED]'>
+                  Education
+                </h4>
+              </div>
+              <div className='grid grid-cols-1 gap-x-6 gap-y-6 px-8'>
+                <div className='items-center'>
+                  <div className='mb-6 space-y-2 rounded-lg py-4 pl-5 pr-3'>
+                    {/* Vertical Timeline */}
+                    <div className='-my-6'>
+                      {education.map((edu, index) => (
+                        <div
+                          key={index}
+                          className='group relative py-6 pl-8 sm:pl-32'
+                        >
+                          {/* Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) */}
+                          <div className='mb-1 flex flex-col items-start before:absolute before:left-2 before:h-full before:-translate-x-1/2 before:translate-y-3 before:self-start before:bg-slate-300 before:px-px after:absolute after:left-2 after:box-content after:h-2 after:w-2 after:-translate-x-1/2 after:translate-y-1.5 after:rounded-full after:border-4 after:border-slate-50 after:bg-slate-700 group-last:before:hidden sm:flex-row sm:before:left-0 sm:before:ml-[6.5rem] sm:after:left-0 sm:after:ml-[6.5rem]'>
+                            <time className='left-0 mb-3 inline-flex h-6 w-20 translate-y-0.5 items-center justify-center rounded-full bg-blue-100 text-xs font-semibold uppercase text-slate-900 sm:absolute sm:mb-0'>
+                              {edu.date}
+                            </time>
+                            <div className='text-xl text-slate-900 dark:text-[#EDEDED]'>
+                              {edu.degree}
+                            </div>
+                          </div>
+                          {/* Content */}
+                          <div className='text-[#374151] dark:text-[#A6A6A6]'>
+                            {edu.institution}, {edu.location}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Technology Section */}
+            <div>
+              <div className='mb-4 mt-8 flex items-center space-x-2 px-4 lg:px-0'>
+                <i className='fa-solid fa-laptop-code text-3xl text-slate-900 dark:text-[#EDEDED]'></i>
+                <h4 className='text-2xl font-medium dark:text-[#EDEDED]'>
+                  Technology Stack
+                </h4>
+              </div>
+              <div className='grid grid-cols-1 gap-x-6 gap-y-6 px-8'>
+                <div className='items-center'>
+                  <div className='mb-6 flex flex-wrap gap-2 rounded-lg py-4 pl-5 pr-3'>
+                    {technologies.map((tech, index) => (
+                      <span
+                        key={index}
+                        className='m-1 rounded-md bg-[#161616] px-4 py-1 text-[#EDEDED] dark:bg-[#EDEDED] dark:text-[#161616]'
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

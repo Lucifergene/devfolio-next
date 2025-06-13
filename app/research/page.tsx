@@ -1,5 +1,5 @@
-import React from "react";
-import { Research } from "./Research";
+import React from 'react';
+import { Research } from './Research';
 
 const ResearchPage: React.FC = () => {
   return (
