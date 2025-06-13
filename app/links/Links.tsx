@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import React, { useEffect } from 'react';
 import {
   DEV_URL,
@@ -43,8 +44,8 @@ const Links: React.FC = () => {
           className='lg:rounded-2xl'
           style={{
             background: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(70px)',
-            WebkitBackdropFilter: 'blur(70px)',
+            backdropFilter: 'blur(15px)',
+            WebkitBackdropFilter: 'blur(15px)',
             border: '1px solid rgba(255, 255, 255, 0.3)',
             boxShadow:
               '0 15px 30px rgba(0, 0, 0, 0.30), 0 10px 10px rgba(0, 0, 0, 0.20)',
@@ -68,14 +69,14 @@ const Links: React.FC = () => {
             </div>
             <div className='grid grid-cols-1 gap-x-6 gap-y-4 md:grid-cols-2 lg:grid-cols-2'>
               {socialLinks.map((link, index) => (
-                <a href={link.url} target='_blank' key={index}>
+                <Link href={link.url} target='_blank' key={index}>
                   <div className='items-center space-x-2 font-geist'>
-                    <div className='mt-4 flex w-full items-center justify-center rounded-full bg-[#161616] px-4 py-3 text-sm font-semibold text-white shadow-md transition duration-200 hover:bg-[#444444] dark:bg-[#ededed] dark:text-[#161616] dark:hover:bg-[#eaeaeac2]'>
+                    <div className='mx-auto mt-4 flex w-80 items-center justify-center rounded-full bg-[#161616] px-4 py-3 text-sm font-semibold text-white shadow-md transition duration-200 hover:bg-[#444444] dark:bg-[#ededed] dark:text-[#161616] dark:hover:bg-[#eaeaeac2]'>
                       <i className={`${link.icon} mr-2`}></i>
                       {link.name}
                     </div>
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

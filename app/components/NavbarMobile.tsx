@@ -80,7 +80,7 @@ export const NavbarMobile = () => {
         className='fixed inset-x-0 bottom-0 top-[5.9rem] z-50 hidden lg:hidden'
       >
         <ul
-          className='absolute inset-0 z-[22222222222222] flex h-full w-full flex-col justify-center p-[6.5rem] font-poppins text-xl shadow-md'
+          className='absolute inset-0 z-[22222222222222] flex h-full w-full flex-col justify-center p-[6.5rem] font-montserrat text-xl shadow-md'
           style={{
             background: 'rgba(255, 255, 255, 0.1)',
             backdropFilter: 'blur(45px)',

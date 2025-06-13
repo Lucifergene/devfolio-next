@@ -5,7 +5,8 @@ import React, { useEffect } from 'react';
 export const DarkModeToggle = () => {
   useEffect(() => {
     const theme = localStorage.getItem('theme');
-    if (theme === 'dark') {
+    // Default to dark mode if no theme is set or if theme is 'dark'
+    if (theme === null || theme === 'dark') {
       document.querySelector('html')?.classList.add('dark');
       document
         .querySelector('#theme-toggle-dark-icon')
@@ -13,6 +14,10 @@ export const DarkModeToggle = () => {
       document
         .querySelector('#theme-toggle-light-icon')
         ?.classList.add('hidden');
+      // Set theme to 'dark' in localStorage if it was null
+      if (theme === null) {
+        localStorage.setItem('theme', 'dark');
+      }
     } else {
       document.querySelector('html')?.classList.remove('dark');
       document
@@ -27,7 +32,7 @@ export const DarkModeToggle = () => {
     <>
       <button
         type='button'
-        className='dark-light-btn bg-white dark:bg-blue-500'
+        className='dark-light-btn bg-white dark:bg-gray-800'
         onClick={() => {
           const html = document.querySelector('html');
           if (html?.classList.contains('dark')) {

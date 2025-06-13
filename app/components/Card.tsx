@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import {
   EMAIL_ID,
   GITHUB_URL,
@@ -19,8 +20,8 @@ const Card = () => {
           className='relative mx-auto mb-6 mt-[180px] w-full rounded-[20px] bg-white px-6 text-center dark:bg-[#111111] md:mt-[220px] lg:mb-0 lg:mt-0'
           style={{
             background: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(50px)',
-            WebkitBackdropFilter: 'blur(50px)',
+            backdropFilter: 'blur(15px)',
+            WebkitBackdropFilter: 'blur(15px)',
             border: '1px solid rgba(255, 255, 255, 0.3)',
             boxShadow:
               '0 10px 20px rgba(0, 0, 0, 0.25), 0 6px 6px rgba(0, 0, 0, 0.15)',
@@ -48,30 +49,38 @@ const Card = () => {
             </h3>
             <div className='flex justify-center space-x-3'>
               {/* <!-- linkedin icon and link --> */}
-              <a href={LINKEDIN_URL} target='_blank' rel='noopener noreferrer'>
+              <Link
+                href={LINKEDIN_URL}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 <span className='socialbtn text-[#0072b1]'>
                   <i className='fa-brands fa-linkedin-in'></i>
                 </span>
-              </a>
+              </Link>
               {/* <!-- x icon and link --> */}
-              <a href={X_URL} target='_blank' rel='noopener noreferrer'>
+              <Link href={X_URL} target='_blank' rel='noopener noreferrer'>
                 <span className='socialbtn text-[#1C9CEA]'>
                   <i className='fa-brands fa-x-twitter'></i>
                 </span>
-              </a>
+              </Link>
               {/* <!-- github icon and link --> */}
-              <a href={GITHUB_URL} target='_blank' rel='noopener noreferrer'>
+              <Link href={GITHUB_URL} target='_blank' rel='noopener noreferrer'>
                 <span className='socialbtn text-[#383c42] dark:text-[#A6A6A6]'>
                   <i className='fa-brands fa-github'></i>
                 </span>
-              </a>
+              </Link>
 
               {/* <!-- hashnode icon and link --> */}
-              <a href={HASHNODE_URL} target='_blank' rel='noopener noreferrer'>
+              <Link
+                href={HASHNODE_URL}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 <span className='socialbtn text-[#325ccf]'>
                   <i className='fa-brands fa-hashnode'></i>
                 </span>
-              </a>
+              </Link>
             </div>
 
             {/* <!-- personal info start --> */}
@@ -133,12 +142,12 @@ const Card = () => {
             {/* <!-- personal info end --> */}
 
             {/* <!-- dowanload button --> */}
-            <a href={RESUME_URL}>
+            <Link href={RESUME_URL}>
               <button className='mt-4 flex w-full items-center justify-center rounded-full bg-[#161616] px-4 py-3 text-sm font-semibold text-white shadow-md transition duration-200 hover:bg-[#444444] dark:bg-[#ededed] dark:text-[#161616] dark:hover:bg-[#eaeaeac2]'>
                 <i className='fa-solid fa-arrow-down mr-1'></i>
                 Download Resume
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

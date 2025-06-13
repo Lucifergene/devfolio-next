@@ -1,15 +1,18 @@
+// Next.js and Vercel specific imports
 import Script from 'next/script';
 import { Metadata, Viewport } from 'next/types';
+import { Geist, Poppins, Source_Sans_3, Montserrat } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Geist, Poppins, Source_Sans_3, Montserrat } from 'next/font/google';
+
+// Component imports
 import Card from './components/Card';
 import { DarkModeToggle } from './components/DarkModeToggle';
 import { Navbar } from './components/Navbar';
 import { NavbarMobile } from './components/NavbarMobile';
 import { NavMobileToggle } from './components/NavMobileToggle';
 
-// Import CSS files directly
+// CSS imports
 import '../public/assets/css/tailwind.css';
 import '../public/assets/css/custom.css';
 import '../styles/globals.css';
@@ -51,15 +54,15 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#0065E2' },
-    { media: '(prefers-color-scheme: dark)', color: '#45505B' },
+    { media: '(prefers-color-scheme: light)', color: '#EDEDED' },
+    { media: '(prefers-color-scheme: dark)', color: '#232834' },
   ],
 };
 
 export const metadata: Metadata = {
   title: 'Avik Kundu | DevFolio',
   description:
-    "Hey 👋, I'm Avik,  Software Engineer specializing in Full-stack development, Kubernetes and open-source technologies.",
+    "Hey 👋, I'm Avik,  Software Engineer specializing in Full-stack development, Kubernetes and Generative AI.",
   applicationName: "Avik's Portfolio Site",
   authors: {
     name: 'Avik Kundu',
@@ -80,15 +83,18 @@ export const metadata: Metadata = {
     'opensource',
     'full stack',
     'ReactJS',
+    'Generative AI',
   ],
   referrer: 'origin',
   openGraph: {
     type: 'website',
     title: 'Avik Kundu | DevFolio',
     description:
-      "Hey 👋, I'm Avik,  Software Engineer specializing in Full-stack development, Kubernetes and open-source technologies. Explore my portfolio and reach out to me for any discussion.",
+      "Hey 👋, I'm Avik,  Software Engineer specializing in Full-stack development, Kubernetes and Generative AI. Explore my portfolio and reach out to me for any discussion.",
     siteName: "Avik's Portfolio Site",
-    images: ['https://i.imgur.com/xUqk6VJ.png'],
+    images: [
+      'https://i.ibb.co/bMFz6Jjf/i-Screen-Shoter-Google-Chrome-250613131026-1.png',
+    ],
     url: 'https://www.avikkundu.com/',
   },
   icons: [
@@ -103,8 +109,10 @@ export const metadata: Metadata = {
     creator: '@avik6028',
     site: '@avik6028',
     description:
-      "Hey 👋, I'm Avik,  Software Engineer specializing in Full-stack development, Kubernetes and open-source technologies. Explore my portfolio and reach out to me for any discussion.",
-    images: ['https://i.imgur.com/xUqk6VJ.png'],
+      "Hey 👋, I'm Avik,  Software Engineer specializing in Full-stack development, Kubernetes and Generative AI. Explore my portfolio and reach out to me for any discussion.",
+    images: [
+      'https://i.ibb.co/bMFz6Jjf/i-Screen-Shoter-Google-Chrome-250613131026-1.png',
+    ],
   },
 };
 
@@ -120,6 +128,32 @@ export default function RootLayout({
     >
       <head>
         <meta charSet='UTF-8' />
+
+        {/* Immediately-invoked function to set theme before page load to prevent FOUC */}
+        <Script id='theme-setter' strategy='beforeInteractive'>
+          {`
+            (function() {
+              try {
+                var LStheme = localStorage.getItem('theme');
+                if (LStheme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                } else if (LStheme === 'light') {
+                  // Explicitly remove if light, helps if class was somehow stuck
+                  document.documentElement.classList.remove('dark');
+                } else { // No theme in localStorage, check prefers-color-scheme
+                  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                }
+              } catch (e) {
+                // Silently fail on error to prevent breaking page load
+                // console.error('Error setting initial theme:', e);
+              }
+            })();
+          `}
+        </Script>
 
         {/* FontAwesome - Use Script components for better Next.js compatibility */}
         <Script
@@ -159,16 +193,16 @@ export default function RootLayout({
         <div className='bg-homeBg dark:bg-homeTwoBg-dark min-h-screen w-full bg-cover bg-fixed bg-center bg-no-repeat font-geist md:pb-16'>
           <div className='section-bg'>
             <div className='flex w-full justify-between px-4'>
-              {/* <!-- website Logo --> */}
+              {/* website Logo */}
               <div className='flex items-center'>
                 <div className='bg-sigLogo dark:bg-sigLogo-dark h-[4rem] rounded-lg lg:w-[30rem]'></div>
                 <div className='bg-sigLogo-mobile dark:bg-sigLogo-mobile-dark ml-6 h-[4rem] w-[5rem] rounded-lg md:hidden'></div>
               </div>
 
               <div className='flex items-center'>
-                {/* <!-- dark and light mode toggle --> */}
+                {/* dark and light mode toggle */}
                 <DarkModeToggle />
-                {/* <!-- mobile toggle button --> */}
+                {/* mobile toggle button */}
                 <NavMobileToggle />
               </div>
             </div>

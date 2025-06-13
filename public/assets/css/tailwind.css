@@ -696,7 +696,7 @@ video {
 }
 
 .socialbtn:hover {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  background-image: linear-gradient(180deg, #555555, #000000);
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -761,14 +761,14 @@ video {
   padding-bottom: 0.625rem;
   /* padding-left: 8rem; */
   /* font-size: 2rem;*/
-  font-weight: 500;
+  font-weight: 400;
   --tw-text-opacity: 1;
   color: #232933;
 }
 
 .mobile-menu-items:hover {
   --tw-text-opacity: 1;
-  color: #ededed;
+  font-weight: 700;
 }
 
 .dark .mobile-menu-items {
@@ -778,7 +778,7 @@ video {
 
 .dark .mobile-menu-items:hover {
   --tw-text-opacity: 1;
-  color: #232933;
+  font-weight: 700;
 }
 
 @media (min-width: 768px) {
@@ -803,24 +803,24 @@ video {
   padding-bottom: 0.625rem;
   /* padding-left: 8rem; */
   /* font-size: 0.8125rem; */
-  font-weight: 600;
-  --tw-text-opacity: 1;
-  color: #ededed;
-}
-
-.mobile-menu-items-active:hover {
-  --tw-text-opacity: 1;
-  color: rgb(250 82 82 / var(--tw-text-opacity));
-}
-
-.dark .mobile-menu-items-active {
+  font-weight: 700;
   --tw-text-opacity: 1;
   color: #232933;
 }
 
+.mobile-menu-items-active:hover {
+  --tw-text-opacity: 1;
+  font-weight: 700;
+}
+
+.dark .mobile-menu-items-active {
+  --tw-text-opacity: 1;
+  color: #ededed;
+}
+
 .dark .mobile-menu-items-active:hover {
   --tw-text-opacity: 1;
-  color: rgb(250 82 82 / var(--tw-text-opacity));
+  font-weight: 700;
 }
 
 @media (min-width: 768px) {
@@ -856,9 +856,9 @@ video {
 
 .dark-light-btn:hover {
   --tw-bg-opacity: 1;
-  background-color: #3b82f6;
+  background-color: #232834;
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: #ededed;
 }
 
 .dark .dark-light-btn {
@@ -870,9 +870,9 @@ video {
 
 .dark .dark-light-btn:hover {
   --tw-bg-opacity: 1;
-  background-color: #3b82f6;
+  background-color: #ededed;
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: #232834;
 }
 
 @media (min-width: 1024px) {
@@ -1070,9 +1070,16 @@ video {
 
 .menu-toggle-btn:hover {
   --tw-bg-opacity: 1;
-  background-color: #3b82f6;
+  background-color: #232834;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.dark .menu-toggle-btn:hover {
+  --tw-bg-opacity: 1;
+  background-color: #ededed;
+  --tw-text-opacity: 1;
+  color: #232834;
 }
 
 @media (min-width: 1024px) {
@@ -2250,7 +2257,7 @@ video {
 }
 
 .bg-homeBg {
-  background-image: url('../images/background/sample-10.webp');
+  background-image: url('../images/background/sample-11.png');
 }
 
 .bg-profilePic {
@@ -2259,17 +2266,17 @@ video {
 }
 
 .bg-sigLogo {
-  background-image: url('../images/logo/image.png');
+  background-image: url('../images/logo/log-dark.webp');
   background-size: 100% 100%;
 }
 
 .dark .dark\:bg-sigLogo-dark {
-  background-image: url('../images/logo/logo-dark.webp');
+  background-image: url('../images/logo/log-light.webp');
   background-size: 100% 100%;
 }
 
 .bg-sigLogo-mobile {
-  background-image: url('../images/logo/logo-mobile.png');
+  background-image: url('../images/logo/logo-mobile.webp');
   background-size: 100% 100%;
 }
 

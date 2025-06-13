@@ -62,8 +62,8 @@ export const Navbar = () => {
         className='ml-auto mb-10 hidden h-[144px] rounded-[16px] p-[30px] font-geist lg:block lg:w-[660px]'
         style={{
           background: 'rgba(255, 255, 255, 0.1)',
-          backdropFilter: 'blur(40px)',
-          WebkitBackdropFilter: 'blur(40px)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
           border: '1px solid rgba(255, 255, 255, 0.3)',
           boxShadow:
             '0 10px 20px rgba(0, 0, 0, 0.25), 0 6px 6px rgba(0, 0, 0, 0.15)',

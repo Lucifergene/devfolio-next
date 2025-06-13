@@ -16,8 +16,8 @@ const About: React.FC = () => {
         className='lg:rounded-2xl'
         style={{
           background: 'rgba(255, 255, 255, 0.1)',
-          backdropFilter: 'blur(50px)',
-          WebkitBackdropFilter: 'blur(50px)',
+          backdropFilter: 'blur(15px)',
+          WebkitBackdropFilter: 'blur(15px)',
           border: '1px solid rgba(255, 255, 255, 0.3)',
           boxShadow:
             '0 15px 30px rgba(0, 0, 0, 0.30), 0 10px 10px rgba(0, 0, 0, 0.20)',

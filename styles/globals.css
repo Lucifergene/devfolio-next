@@ -9,6 +9,16 @@
     --font-source-sans-3: 'Source Sans 3', sans-serif;
   }
 
+  html {
+    /* Default background for dark mode to prevent FOUC */
+    background-color: #0a0a06; /* Example dark color, match your dark theme's primary background */
+  }
+
+  html.dark {
+    /* Ensure Tailwind's dark mode background takes precedence if needed */
+    /* background-color: var(--your-tailwind-dark-bg-color); */ /* Or let Tailwind handle it */
+  }
+
   html,
   body {
     font-family: var(--font-geist);

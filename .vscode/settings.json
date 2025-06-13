@@ -1,4 +1,11 @@
 {
+  "terminal.integrated.profiles.osx": {
+    "nvm": {
+      "path": "/bin/zsh",
+      "args": ["-c", "source ~/.nvm/nvm.sh && nvm use && exec zsh"]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "nvm",
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "editor.formatOnSave": true,
@@ -17,5 +24,10 @@
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#392C01",
+    "titleBar.activeBackground": "#503E02",
+    "titleBar.activeForeground": "#FFFAE9"
   }
 }
